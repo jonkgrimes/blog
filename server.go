@@ -7,10 +7,12 @@ import (
 
 func main() {
 	m := martini.Classic()
-	m.Use(render.Renderer())
+	m.Use(render.Renderer(render.Options{
+		Layout: "layout",
+	}))
 
 	m.Get("/", func(r render.Render) {
-		r.HTML(200, "home")
+		r.HTML(200, "home", nil)
 	})
 
 	m.Run()
