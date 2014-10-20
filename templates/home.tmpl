@@ -1,3 +1,8 @@
 <p>These are the musings of a developer who frequently
 finds himself in situations where he is hopelessly out
 of depth.</p>
+<ul>
+  {{range .Posts }}
+  <li><a href="/posts/{{.Id}}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
