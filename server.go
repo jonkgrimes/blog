@@ -19,9 +19,6 @@ type HomePageView struct {
 	Posts []Post
 }
 
-type Context struct {
-}
-
 func main() {
 	m := martini.Classic()
 	m.Use(render.Renderer(render.Options{
@@ -30,23 +27,25 @@ func main() {
 
 	db := InitDb()
 
+	m.Map(db)
+
 	m.Get("/", GetHome)
 
 	m.Group("/posts", func(martini.Router) {
-		m.Get("/:id", GetPost)
+		m.Get("/:id", ShowPost)
 		m.Post("/new", NewPost)
 	})
 
 	m.Run()
 }
 
-func GetHome(r render.Render) {
+func GetHome(r render.Render, db gorm.DB) {
 	var posts []Post
 	db.Find(&posts)
 	r.HTML(200, "home", &HomePageView{Posts: posts})
 }
 
-func GetPost(r render.Render, params martini.Params) {
+func ShowPost(params martini.Params, r render.Render, db gorm.DB) {
 	post := &Post{}
 	db.First(&post, params["id"])
 	r.HTML(200, "posts/show", post)
