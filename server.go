@@ -19,24 +19,44 @@ type HomePageView struct {
 	Posts []Post
 }
 
+type Context struct {
+}
+
 func main() {
 	m := martini.Classic()
 	m.Use(render.Renderer(render.Options{
 		Layout: "layout",
 	}))
 
-	db := initDb()
+	db := InitDb()
 
-	m.Get("/", func(r render.Render) {
-		var posts []Post
-		db.Find(&posts)
-		r.HTML(200, "home", &HomePageView{Posts: posts})
+	m.Get("/", GetHome)
+
+	m.Group("/posts", func(martini.Router) {
+		m.Get("/:id", GetPost)
+		m.Post("/new", NewPost)
 	})
 
 	m.Run()
 }
 
-func initDb() gorm.DB {
+func GetHome(r render.Render) {
+	var posts []Post
+	db.Find(&posts)
+	r.HTML(200, "home", &HomePageView{Posts: posts})
+}
+
+func GetPost(r render.Render, params martini.Params) {
+	post := &Post{}
+	db.First(&post, params["id"])
+	r.HTML(200, "posts/show", post)
+}
+
+func NewPost() {
+	return
+}
+
+func InitDb() gorm.DB {
 	db, err := gorm.Open("postgres", "user=jonkgrimes dbname=blog_development sslmode=disable")
 
 	checkErr(err, "gorm.Open failed")
