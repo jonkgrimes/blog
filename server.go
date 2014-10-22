@@ -46,7 +46,7 @@ func GetHome(r render.Render, db gorm.DB) {
 }
 
 func ShowPost(params martini.Params, r render.Render, db gorm.DB) {
-	post := &Post{}
+	post := Post{}
 	db.First(&post, params["id"])
 	r.HTML(200, "posts/show", post)
 }
