@@ -6,6 +6,7 @@ import (
 	"github.com/go-martini/martini"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
+	"github.com/martini-contrib/binding"
 	"github.com/martini-contrib/render"
 )
 
@@ -13,6 +14,11 @@ type Post struct {
 	Id    int64
 	Title string `sql:"size:255"`
 	Body  string `sql:"text"`
+}
+
+type PostForm struct {
+	Title string `form:"title" binding:"required"`
+	Body  string `form:"body" binding:"required"`
 }
 
 type HomePageView struct {
@@ -32,8 +38,9 @@ func main() {
 	m.Get("/", GetHome)
 
 	m.Group("/posts", func(martini.Router) {
+		m.Get("/new", NewPost)
+		m.Post("/create", binding.Bind(PostForm{}), CreatePost)
 		m.Get("/:id", ShowPost)
-		m.Post("/new", NewPost)
 	})
 
 	m.Run()
@@ -51,8 +58,14 @@ func ShowPost(params martini.Params, r render.Render, db gorm.DB) {
 	r.HTML(200, "posts/show", post)
 }
 
-func NewPost() {
-	return
+func NewPost(r render.Render) {
+	r.HTML(200, "posts/new", nil)
+}
+
+func CreatePost(postForm PostForm, r render.Render, db gorm.DB) {
+	post := Post{Title: postForm.Title, Body: postForm.Body}
+	db.Create(&post)
+	r.Redirect("/", 301)
 }
 
 func InitDb() gorm.DB {
