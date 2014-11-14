@@ -78,14 +78,14 @@ func SetContext(rw http.ResponseWriter, r *http.Request, next http.HandlerFunc) 
 	next(rw, r)
 }
 
-func GetRenderer(r *http.Request) render.Render {
+func GetRenderer(r *http.Request) *render.Render {
 	if rv := context.Get(r, Renderer); rv != nil {
-		return rv.(render.Render)
+		return rv.(*render.Render)
 	}
-	return render.Render{}
+	return nil
 }
 
-func SetRenderer(r *http.Request, renderer render.Render) {
+func SetRenderer(r *http.Request, renderer *render.Render) {
 	context.Set(r, Renderer, renderer)
 }
 
