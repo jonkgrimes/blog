@@ -2,13 +2,20 @@ package main
 
 import (
 	"log"
+	"net/http"
 
-	"github.com/go-martini/martini"
+	"github.com/codegangsta/negroni"
+	"github.com/gorilla/context"
+	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
-	"github.com/martini-contrib/binding"
-	"github.com/martini-contrib/render"
+	"gopkg.in/unrolled/render.v1"
 )
+
+type key int
+
+const DB key = 0
+const Renderer key = 1
 
 type Post struct {
 	Id    int64
@@ -26,46 +33,71 @@ type HomePageView struct {
 }
 
 func main() {
-	m := martini.Classic()
-	m.Use(render.Renderer(render.Options{
+	n := negroni.New(
+		negroni.NewRecovery(),
+		negroni.HandlerFunc(SetContext),
+		negroni.NewLogger(),
+		negroni.NewStatic(http.Dir("public")),
+	)
+
+	router := mux.NewRouter().StrictSlash(true)
+	router.HandleFunc("/", HomeHandler)
+
+	// posts collection
+	// posts := router.Path("/posts").Subrouter()
+	//posts.Methods("GET").HandlerFunc(PostsIndexHandler)
+	//posts.Methods("POST").HandlerFunc(PostsCreateHandler)
+
+	// posts singular
+	//post := r.PathPrefix("/posts/{id}/").Subrouter()
+	//post.Methods("GET").Path("/edit").HandlerFunc(PostEditHandler)
+	//post.Methods("GET").HandlerFunc(PostShowHandler)
+	//post.Methods("PUT", "POST").HandlerFunc(PostUpdateHandler)
+	//post.Methods("DELETE").HandlerFunc(PostDeleteHandler)
+
+	n.UseHandler(router)
+
+	n.Run(":3000")
+
+}
+
+func HomeHandler(rw http.ResponseWriter, r *http.Request) {
+	db := GetDB(r)
+	renderer := GetRenderer(r)
+	var posts []Post
+	db.Find(&posts)
+	renderer.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
+}
+
+func SetContext(rw http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
+	context.Set(r, DB, InitDb())
+	context.Set(r, Renderer, render.New(render.Options{
 		Layout: "layout",
 	}))
 
-	db := InitDb()
-
-	m.Map(db)
-
-	m.Get("/", GetHome)
-
-	m.Group("/posts", func(martini.Router) {
-		m.Get("/new", NewPost)
-		m.Post("/create", binding.Bind(PostForm{}), CreatePost)
-		m.Get("/:id", ShowPost)
-	})
-
-	m.Run()
+	next(rw, r)
 }
 
-func GetHome(r render.Render, db gorm.DB) {
-	var posts []Post
-	db.Find(&posts)
-	r.HTML(200, "home", &HomePageView{Posts: posts})
+func GetRenderer(r *http.Request) render.Render {
+	if rv := context.Get(r, Renderer); rv != nil {
+		return rv.(render.Render)
+	}
+	return render.Render{}
 }
 
-func ShowPost(params martini.Params, r render.Render, db gorm.DB) {
-	post := Post{}
-	db.First(&post, params["id"])
-	r.HTML(200, "posts/show", post)
+func SetRenderer(r *http.Request, renderer render.Render) {
+	context.Set(r, Renderer, renderer)
 }
 
-func NewPost(r render.Render) {
-	r.HTML(200, "posts/new", nil)
+func GetDB(r *http.Request) gorm.DB {
+	if rv := context.Get(r, DB); rv != nil {
+		return rv.(gorm.DB)
+	}
+	return gorm.DB{}
 }
 
-func CreatePost(postForm PostForm, r render.Render, db gorm.DB) {
-	post := Post{Title: postForm.Title, Body: postForm.Body}
-	db.Create(&post)
-	r.Redirect("/", 301)
+func SetDB(r *http.Request, db gorm.DB) {
+	context.Set(r, DB, db)
 }
 
 func InitDb() gorm.DB {
