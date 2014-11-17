@@ -44,7 +44,7 @@ func main() {
 	router.HandleFunc("/", HomeHandler)
 
 	// posts collection
-	// posts := router.Path("/posts").Subrouter()
+	posts := router.Path("/posts").Subrouter()
 	//posts.Methods("GET").HandlerFunc(PostsIndexHandler)
 	//posts.Methods("POST").HandlerFunc(PostsCreateHandler)
 
@@ -64,8 +64,10 @@ func main() {
 func HomeHandler(rw http.ResponseWriter, r *http.Request) {
 	db := GetDB(r)
 	renderer := GetRenderer(r)
+
 	var posts []Post
 	db.Find(&posts)
+
 	renderer.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
 }
 
