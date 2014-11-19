@@ -31,44 +31,44 @@ func main() {
 		Layout: "layout",
 	}))
 
-	db := InitDb()
+	db := initDb()
 
 	m.Map(db)
 
-	m.Get("/", GetHome)
+	m.Get("/", getHome)
 
 	m.Group("/posts", func(martini.Router) {
-		m.Get("/new", NewPost)
-		m.Post("/create", binding.Bind(PostForm{}), CreatePost)
-		m.Get("/:id", ShowPost)
+		m.Get("/new", newPost)
+		m.Post("/create", binding.Bind(PostForm{}), createPost)
+		m.Get("/:id", showPost)
 	})
 
 	m.Run()
 }
 
-func GetHome(r render.Render, db gorm.DB) {
+func getHome(r render.Render, db gorm.DB) {
 	var posts []Post
 	db.Find(&posts)
 	r.HTML(200, "home", &HomePageView{Posts: posts})
 }
 
-func ShowPost(params martini.Params, r render.Render, db gorm.DB) {
+func showPost(params martini.Params, r render.Render, db gorm.DB) {
 	post := Post{}
 	db.First(&post, params["id"])
 	r.HTML(200, "posts/show", post)
 }
 
-func NewPost(r render.Render) {
+func newPost(r render.Render) {
 	r.HTML(200, "posts/new", nil)
 }
 
-func CreatePost(postForm PostForm, r render.Render, db gorm.DB) {
+func createPost(postForm PostForm, r render.Render, db gorm.DB) {
 	post := Post{Title: postForm.Title, Body: postForm.Body}
 	db.Create(&post)
 	r.Redirect("/", 301)
 }
 
-func InitDb() gorm.DB {
+func initDb() gorm.DB {
 	db, err := gorm.Open("postgres", "user=jonkgrimes dbname=blog_development sslmode=disable")
 
 	checkErr(err, "gorm.Open failed")
