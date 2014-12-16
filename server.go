@@ -9,6 +9,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
+	"github.com/mholt/binding"
 	"gopkg.in/unrolled/render.v1"
 )
 
@@ -24,8 +25,8 @@ type Post struct {
 }
 
 type PostForm struct {
-	Title string `form:"title" binding:"required"`
-	Body  string `form:"body" binding:"required"`
+	Title string
+	Body  string
 }
 
 type HomePageView struct {
@@ -45,15 +46,15 @@ func main() {
 
 	// posts collection
 	posts := router.Path("/posts").Subrouter()
-	//posts.Methods("GET").HandlerFunc(PostsIndexHandler)
-	//posts.Methods("POST").HandlerFunc(PostsCreateHandler)
+	posts.Methods("GET").Path("/new").HandlerFunc(NewPostHandler)
+	posts.Methods("POST").HandlerFunc(CreatePostHandler)
 
 	// posts singular
-	//post := r.PathPrefix("/posts/{id}/").Subrouter()
-	//post.Methods("GET").Path("/edit").HandlerFunc(PostEditHandler)
-	//post.Methods("GET").HandlerFunc(PostShowHandler)
-	//post.Methods("PUT", "POST").HandlerFunc(PostUpdateHandler)
-	//post.Methods("DELETE").HandlerFunc(PostDeleteHandler)
+	// post := router.PathPrefix("/posts/{id}/").Subrouter()
+	// post.Methods("GET").Path("/edit").HandlerFunc(PostEditHandler)
+	// post.Methods("GET").HandlerFunc(PostShowHandler)
+	// post.Methods("PUT", "POST").HandlerFunc(PostUpdateHandler)
+	// post.Methods("DELETE").HandlerFunc(PostDeleteHandler)
 
 	n.UseHandler(router)
 
@@ -69,6 +70,37 @@ func HomeHandler(rw http.ResponseWriter, r *http.Request) {
 	db.Find(&posts)
 
 	renderer.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
+}
+
+func NewPostHandler(rw http.ResponseWriter, r *http.Request) {
+	renderer := GetRenderer(r)
+
+	renderer.HTML(rw, http.StatusOK, "posts/new", nil)
+}
+
+func CreatePostHandler(rw http.ResponseWriter, r *http.Request) {
+	db := GetDB(r)
+	postForm := new(PostForm)
+	errs := binding.Bind(r, postForm)
+	if errs.Handle(rw) {
+		return
+	}
+
+	post := Post{Title: postForm.Title, Body: postForm.Body}
+
+	db.Create(&post)
+
+	http.Redirect(rw, r, "/", 301)
+}
+
+func (pf *PostForm) FieldMap() binding.FieldMap {
+	return binding.FieldMap{
+		&pf.Title: binding.Field{
+			Form:     "title",
+			Required: true,
+		},
+		&pf.Body: "body",
+	}
 }
 
 func SetContext(rw http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
