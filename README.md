@@ -3,4 +3,4 @@ blog
 
 A little Go primer for myself.
 
-Using some gorm and martini.
+Using some gorm and negroni.
