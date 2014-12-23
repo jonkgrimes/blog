@@ -18,19 +18,10 @@ type key int
 const DB key = 0
 const Renderer key = 1
 
-type Post struct {
-	Id    int64
-	Title string `sql:"size:255"`
-	Body  string `sql:"text"`
-}
-
-type PostForm struct {
-	Title string
-	Body  string
-}
-
-type HomePageView struct {
-	Posts []Post
+type HomeController struct {
+	AppController
+	*render.Render
+	*gorm.DB
 }
 
 func main() {
@@ -50,26 +41,22 @@ func main() {
 	posts.Methods("POST").HandlerFunc(CreatePostHandler)
 
 	// posts singular
-	// post := router.PathPrefix("/posts/{id}/").Subrouter()
+	post := router.PathPrefix("/posts/{id}").Subrouter()
 	// post.Methods("GET").Path("/edit").HandlerFunc(PostEditHandler)
-	// post.Methods("GET").HandlerFunc(PostShowHandler)
+	post.Methods("GET").HandlerFunc(ShowPostHandler)
 	// post.Methods("PUT", "POST").HandlerFunc(PostUpdateHandler)
 	// post.Methods("DELETE").HandlerFunc(PostDeleteHandler)
 
 	n.UseHandler(router)
 
 	n.Run(":3000")
-
 }
 
-func HomeHandler(rw http.ResponseWriter, r *http.Request) {
-	db := GetDB(r)
-	renderer := GetRenderer(r)
-
+func (c *HomeController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []Post
-	db.Find(&posts)
+	c.Find(&posts)
 
-	renderer.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
+	c.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
 }
 
 func NewPostHandler(rw http.ResponseWriter, r *http.Request) {
@@ -101,6 +88,17 @@ func (pf *PostForm) FieldMap() binding.FieldMap {
 		},
 		&pf.Body: "body",
 	}
+}
+
+func ShowPostHandler(rw http.ResponseWriter, r *http.Request) {
+	db := GetDB(r)
+	renderer := GetRenderer(r)
+	post := Post{}
+
+	id := mux.Vars(r)["id"]
+	db.First(&post, id)
+
+	renderer.HTML(rw, http.StatusOK, "posts/show", &post)
 }
 
 func SetContext(rw http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
