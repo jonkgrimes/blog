@@ -21,7 +21,6 @@ const Renderer key = 1
 type HomeController struct {
 	AppController
 	*render.Render
-	*gorm.DB
 }
 
 func main() {
@@ -32,20 +31,13 @@ func main() {
 		negroni.NewStatic(http.Dir("public")),
 	)
 
+	c := &HomeController{Render: render.New(render.Options{
+		Layout: "layout",
+	})}
+
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/", HomeHandler)
-
-	// posts collection
-	posts := router.Path("/posts").Subrouter()
-	posts.Methods("GET").Path("/new").HandlerFunc(NewPostHandler)
-	posts.Methods("POST").HandlerFunc(CreatePostHandler)
-
-	// posts singular
-	post := router.PathPrefix("/posts/{id}").Subrouter()
-	// post.Methods("GET").Path("/edit").HandlerFunc(PostEditHandler)
-	post.Methods("GET").HandlerFunc(ShowPostHandler)
-	// post.Methods("PUT", "POST").HandlerFunc(PostUpdateHandler)
-	// post.Methods("DELETE").HandlerFunc(PostDeleteHandler)
+	router.Handle("/", c.Action(c.Index))
+	router.Handle("/about", c.Action(c.About))
 
 	n.UseHandler(router)
 
@@ -54,9 +46,15 @@ func main() {
 
 func (c *HomeController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []Post
-	c.Find(&posts)
+	// c.Find(&posts)
 
 	c.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
+	return nil
+}
+
+func (c *HomeController) About(rw http.ResponseWriter, r *http.Request) error {
+	c.HTML(rw, http.StatusOK, "about", nil)
+	return nil
 }
 
 func NewPostHandler(rw http.ResponseWriter, r *http.Request) {
