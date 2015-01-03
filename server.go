@@ -130,7 +130,7 @@ func SetDB(r *http.Request, db gorm.DB) {
 	context.Set(r, DB, db)
 }
 
-func initDb() gorm.DB {
+func InitDb() gorm.DB {
 	db, err := gorm.Open("postgres", "user=jonkgrimes dbname=blog_development sslmode=disable")
 
 	checkErr(err, "gorm.Open failed")
