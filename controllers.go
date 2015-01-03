@@ -34,7 +34,7 @@ type PostsController struct {
 
 func (c *HomeController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []Post
-	c.Find(&posts)
+	c.Order("created_at DESC").Find(&posts)
 
 	c.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
 	return nil
