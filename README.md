@@ -19,4 +19,4 @@ Things to do:
 - [ ] hookup newrelic
 - [ ] add images
 - [ ] remove any sensitive data
-- [ ] import Wordpress export
+- [x] import Wordpress export
