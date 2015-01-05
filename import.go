@@ -4,6 +4,9 @@ import (
 	"encoding/xml"
 	"fmt"
 	"os"
+	"time"
+
+	_ "github.com/lib/pq"
 )
 
 type Rss struct {
@@ -25,7 +28,11 @@ type Item struct {
 	ItemType    string   `xml:"post_type"`
 }
 
-func main() {
+func runImport() {
+	const layout = "Mon, 2 Jan 2006 15:04:05 -0700"
+
+	db := InitDb()
+
 	file, err := os.Open("tmp/wordpress.xml")
 	if err != nil {
 		fmt.Println("Error opening file: ", err)
@@ -40,9 +47,14 @@ func main() {
 
 	for _, item := range r.Channel.Items {
 		if item.Status == "publish" && item.ItemType == "post" {
-			fmt.Println(item.Title)
-			fmt.Println(item.PublishedAt)
-			fmt.Println(item.Content, "\n")
+			t, _ := time.Parse(layout, item.PublishedAt)
+			post := Post{
+				Title:     item.Title,
+				Body:      item.Content,
+				CreatedAt: t,
+				UpdatedAt: t,
+			}
+			db.Create(&post)
 		}
 	}
 }
