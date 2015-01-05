@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/">
+  <channel>
+    <title>I have no idea what I'm doing...</title>
+    <link>http://jonkgrimes.com</link>
+    <pubDate>Wed, 02 Jan 2013 18:11:36 +0000</pubDate>
+    <description>Really I don't</description>
+    <language>en-US</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <wp:author>
+      <wp:author_id>2028164740</wp:author_id>
+      <wp:author_login>jonkgrimes@gmail.com</wp:author_login>
+      <wp:author_email>jonkgrimes@gmail.com</wp:author_email>
+      <wp:author_display_name><![CDATA[Jon Grimes]]></wp:author_display_name>
+      <wp:author_first_name><![CDATA[Jon]]></wp:author_first_name>
+      <wp:author_last_name><![CDATA[Grimes]]></wp:author_last_name>
+    </wp:author>
+    <wp:category>
+      <wp:cat_name><![CDATA[Personal - Software and IT]]></wp:cat_name>
+      <wp:category_nicename>Personal-SoftwareandIT</wp:category_nicename>
+      <wp:category_parent />
+    </wp:category>
+    <item>
+      <link>/about/</link>
+      <title>About</title>
+      <pubDate>Wed, 21 Mar 2012 18:05:58 +0000</pubDate>
+      <content:encoded><![CDATA[<h1 class="text-align-center">My name is Jon</h1>&nbsp;
+  
+      <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/t/52de7cbce4b047cdd88ac9fc/1390312638316/_5768638_orig.jpg?format=original" alt=""/>
+  
+
+<p class="text-align-center"><strong><span style="font-size:14px">I'm a programmer. </span></strong></p><p class="text-align-center"><strong>I like beer, Ruby, pizza, Star Wars and football.</strong></p><p class="text-align-center"><strong>I live in Austin, TX.</strong></p><p class="text-align-center"><strong>I currently work for this awesome place called <a href="http://www.spiceworks.com">Spiceworks</a>.</strong></p><p class="text-align-center"><span style="font-size:14px">I used to work for the great people at <a href="http://ownlocal.com">OwnLocal</a> and&nbsp;</span><a href="http://www.thesquarefoot.com">TheSquareFoot</a><span style="font-size:14px">.</span></p><p class="text-align-center"><span style="font-size:14px">I love hearing from people, feel free to send me an email: </span></p><p class="text-align-center"><span style="font-size:14px">jonkgrimes at gmail dot com</span></p>&nbsp;]]></content:encoded>
+      <wp:post_name>about</wp:post_name>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_id>0</wp:post_id>
+      <wp:status>publish</wp:status>
+    </item>
+    <item>
+      <link>/archive/</link>
+      <title>Archive</title>
+      <pubDate>Mon, 16 Apr 2012 20:38:08 +0000</pubDate>
+      <content:encoded><![CDATA[&nbsp;<h1 class="text-align-center">Journal Post Calendar</h1><!-- The calendar block is initialized by javascript. --><h2 class="text-align-center">Journal Tag Cloud</h2><div class="sqs-state-message">There are no items to display from the selected collection.</div>&nbsp;]]></content:encoded>
+      <wp:post_name>archive</wp:post_name>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_id>1</wp:post_id>
+      <wp:status>publish</wp:status>
+    </item>
+    <item>
+      <link>/slider/</link>
+      <title>Slider Design</title>
+      <pubDate>Thu, 19 Jul 2012 20:52:09 +0000</pubDate>
+      <content:encoded><![CDATA[<h1 class="text-align-center">Slider Design</h1><div class="image-gallery-wrapper">
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705564/50e4785ce4b0131a887057a7/1341932221885/4309061571_18f0f30838_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705564/50e4785ce4b0131a887057a3/1341932350719/4309065391_f357d26507_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705564/50e4785ce4b0131a887057a5/1341932348271/4309069069_b8baaae4ed_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705564/50e4785ce4b0131a887057a4/1341932350542/4309792778_75b236730a_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705564/50e4785ce4b0131a887057a6/1341932221955/4309796174_00be8aacd3_b.jpg?format=original" />
+  
+
+</div>]]></content:encoded>
+      <wp:post_name>slider</wp:post_name>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_id>2</wp:post_id>
+      <wp:status>publish</wp:status>
+    </item>
+    <item>
+      <title>Focus</title>
+      <link>/blog/null</link>
+      <content:encoded><![CDATA[<p>I st</p>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name />
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>3</wp:post_id>
+      <wp:status>draft</wp:status>
+      <pubDate>Fri, 09 May 2014 14:21:35 +0000</pubDate>
+      <wp:post_date>2014-05-09 14:21:35</wp:post_date>
+      <wp:post_date_gmt>2014-05-09 14:21:35</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <title>Why the new Star</title>
+      <link>/blog/null</link>
+      <content:encoded />
+      <excerpt:encoded />
+      <wp:post_name />
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>4</wp:post_id>
+      <wp:status>draft</wp:status>
+      <pubDate>Wed, 30 Apr 2014 15:35:57 +0000</pubDate>
+      <wp:post_date>2014-04-30 15:35:57</wp:post_date>
+      <wp:post_date_gmt>2014-04-30 15:35:57</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <title>What I learned at TheSquareFoot</title>
+      <link>/blog/2014/3/28/what-i-learned-at-thesquarefoot</link>
+      <content:encoded><![CDATA[<p>After a year and half of ups and downs, I've finally reached the end of my employment with <a href="http://www.thesquarefoot.com">TheSquareFoot</a>. It's been an awesome adventure, filled with great high's and embarrassing lows. Like my year-end recap, I thought I would write a recap of my time with the company and some of the lessons learned.</p><h3>Hitting the ground running</h3><p>There are two things you need to be effective as a developer:</p><ol><li>You need to be comfortable with the tools and paradigms of the codebase</li><li>More importantly, you need to understand the domain.</li></ol><p>I've thought long and hard about the best way to go about this and for myself, the easiest way is just to start hammering out features, but in a very specific way. By starting small and focused, where most of the code will be detached from main functionality of the product, and gradually growing in complexity and size.</p><p>I will say that I didn't follow my own advice here (which is why it's a lesson learned). My very first two weeks at <a href="http://www.thesquarefoot.com">TheSquareFoot</a>, I decided to crunch out an integrated blog for the product. While I did an ok job (it still functions today) and it was separate from the main functionality, I overestimated how much work it would be to get done. I ended up slipping a week or so and there were a lot of bugs. I should have slowed down and worked on something a bit smaller, or used an off the shelf component instead of writing a blog engine from scratch.</p><h3>Saying "No"</h3><p>This was a hard one for me. I'm by nature a diplomat (which is a nice way of saying "people pleaser") and conflict doesn't come easy to me. I am also, fairly opinionated when it comes to data and code. I know what should represent what. I don't like "easy" fixes, and code bloat makes me sick to my stomach.</p><p>I had to say "no" quite often, and while there were uncomfortable discussions, I thought on the whole I did a good job of trying to keep out features that were absolutely necessary. Was there some wasted iterations on features people didn't use? Sure, but all in all I feel that most of time was spent wisely on things that furthered the business.</p><h3>Recruiting</h3><p>It's hard. While I didn't get to do much of it, I did learn a couple solid lessons:</p><blockquote><p>Make a plan, stick to it and record your findings.</p></blockquote><p>I initially approached interviewing candidates in a non-chalant way, where it would be more of a conversation with them. This did have the effect of putting them at ease and usually conversation flowed normally. But here's where I went wrong: when I started asking the code questions, I would never ask the same questions. I would ask some the same question (recursive fibbonaci is one of my favorites), but I would also vary a lot of them.</p><p>I realized too late that this was just not effective as I wasn't giving people a good baseline to judge each of them on. Some would get all the questions right, and some would struggle, but I couldn't compare them on how they answered.</p><p>This led me to my second lesson, which is interviews are largely subjective. As much as I tried to force objective numbers onto the process, it would really come down to who I didn't like and who I did like as a person. While I don't think that this is necessarily a bad thing, I was a little perturbed at the realization that my personal feelings were influencing my hiring decisions.</p><h3>The <a href="http://www.eranyc.com">accelerator</a></h3><p>Wow. A list of adjectives come to mind: challenging, exciting, hard, enlightening, fast paced. The first startup I worked with had gone through <a href="http://ycombinator.com">Y-Combinator</a> and while I had asked the founders for their advice on going through an incubator/accelarator program, I still was unprepared for how it would be (granted YC is a totally different animal). It was an amazing experience and while I learned more about fund-raising and business than I ever thought I would, it is was also very difficult for me on a personal level. Being away from friends and family (the accelerator was in NYC and my life was in ATX), was taxing and while I did travel back quite frequently, it was still very hard.</p><h3>Being remote</h3><p>This is probably the most important thing I learned. While I do enjoy working remotely some of the time and can function effectively on my own, I need to have a team I sit nearby to. My title at <a href="http://www.thesquarefoot.com">TheSquareFoot</a> was CTO, and as such I needed to be part of the high level discussions and involved on daily basis with the day-to-day operations. Working remotely, I just wasn't. I have admired companies like <a href="http://37signals.com">37signals</a> for their ability to work totally distributed, but I don't think it's the most effective way for a startup to function.</p><p> </p><p>To the guys at TheSquareFoot, good luck to all of you. I have enjoyed my time immensely.</p><p>I'll write more about my experiences at my new job at&nbsp;<a href="http://www.spiceworks.com">Spiceworks</a>!</p><p> </p>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name>2014/3/28/what-i-learned-at-thesquarefoot</wp:post_name>
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>5</wp:post_id>
+      <wp:status>publish</wp:status>
+      <pubDate>Mon, 21 Apr 2014 14:03:00 +0000</pubDate>
+      <wp:post_date>2014-04-21 14:03:00</wp:post_date>
+      <wp:post_date_gmt>2014-04-21 14:03:00</wp:post_date_gmt>
+      <category domain="post_tag" nicename="cto"><![CDATA[cto]]></category>
+      <category domain="post_tag" nicename="startups"><![CDATA[startups]]></category>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <title>Learning Erlang: A noob's thoughts</title>
+      <link>/blog/2014/2/25/on-learning-erlang</link>
+      <content:encoded><![CDATA[<p>A couple weeks ago I took it upon myself to learn <a href="http://elixir-lang.org">Elixir</a>. I've been wanting to learn a new language for the past year and I've never found myself the time to dive into something wholeheartedly. I had a brief interaction with Clojure on a long plane ride, and while I was excited to learn about it, &nbsp;the whole lispiness of it kinda put me off a bit. So I began reading up on Elixir and its Erlang underpinnings. But the more I read, I got the feeling what I really should be learning is Erlang (better to start learning how to make a good foundation than just head straight into the drywall).</p><p>Thankfully, Erlang has an amazing book written about it: <a href="http://learnyousomeerlang.com">Learn You Some Erlang for Great Good</a>. It is truly a joy to read. Irreverent, extremely informative and chock full of great tidbits and explanations of the OTP, concurrency and functional paradigms. It's some of the most fun reading a programming book I've had in a long while.</p><p>Erlang is a beautiful language, albeit far different from anything I've encountered in my career. I'll save getting into the awesome concurrency stuff for later but I'll get into the few things that threw me for a loop when I first started reading.</p><h2>Syntax</h2><blockquote><p>"You mean I have to end a statement with a period? That sounds suspiciously like C-like semicolon business to me."</p></blockquote><p>Probably the first thing that threw me off was just the syntax. &nbsp;And while it is a little like that, it has this strange way of getting my mind ready to think in a functional manner (not that it does that very well). Probably one of my gripes about Javascript is is this strange veneer over what is essentially a nice functional language. In short, Erlang makes it clear that you shouldn't be writing code in an imperative or object oriented manner.&nbsp;</p><p>It does take some getting used to, but I legitimately have grown to appreciate the syntax.</p><h2>Immutability</h2><blockquote><p>"I can't change a variable? This is stupid."</p></blockquote><p>One of the first things you encounter with Erlang is its immutability. Like any new programmer, I immediately opened up the interactive console and typed this:</p><pre>Eshell V5.10.2 &nbsp;(abort with ^G)
+1&gt; A = 1.
+1
+2&gt; A = 2.
+** exception error: no match of right hand side value 2</pre><p>I was immediately shocked by what occurred, but in retrospect, it's actually quite brilliant. Erlang enforces immutability on variables as a safeguard on multiple processes modifying the variable. Along the same vein as the syntax forcing you into a functional mindset, this is more of the same. When thinking through how you go about solving a problem, you have to keep this limitation in mind, and hopefully allows you to grow applications so that they can easily become concurrent. Ruby handles this by using Mutexes and Semaphore's, which work but reasoning about them can get a little ugly. Immutability means there's no shared state between processes.</p><h2>Pattern Matching and Guards</h2><blockquote><p>"Why hasn't anyone thought of this before?"</p></blockquote><p>This actual struck me as one of the more interesting features of Erlang. Pattern matching is allows you to do some pretty powerful stuff. Lets take this recursive implementation of map:</p><pre><strong>map</strong><span>(_,</span> <span>[])</span> <strong>-&gt;</strong> [];
+<strong>map</strong><span>(</span><span>F</span><span>,</span> <span>[</span><span>H</span><span>|</span><span>T</span><span>])</span> <strong>-&gt;</strong> <span>[</span><span>F</span><span>(</span><span>H</span><span>)|</span><span>map</span><span>(</span><span>F</span><span>,</span><span>T</span><span>)].</span></pre><p>It actually reads pretty easily, right? Ok, there are some weird Erlang list idioms going on, but what this essentially does is define a function "map" that takes two arguments, a function to be applied to elements of the list and the list itself.</p><p>The first line is our base case, which says, if the list is empty, simply return the empty list. The second basically is the recursive part; apply function to the element, and append the remaining list to the new element. But what is interesting here is the conditional nature of the function without using "if" statements. Erlang is "matching" the function with values that are fed to it. If the list it is fed fits into the first pattern (where it's empty), it matches to that function definition and executes. It reads a little more naturally functional in my mind.</p><p>Guards allow you to be even more expressive with your functions. You can also do things like this:</p><pre>old_enough_to_drink(X) when X &gt;= 21 -&gt; true;
+old_enough_to_drink(_) -&gt; false.</pre><p>That "when" clause allows you to get a little more complex in your logic. There are actually "if" and "case" statements available (and if I remember correctly, they actually compile down to the same thing), but it seems to be a matter of taste over which to use. There's a great deal more here but this section is getting a bit long so I'll leave it at that for now.</p><h2>List Comprehensions</h2><blockquote><p>"Delicious lists..."</p></blockquote><p>From my old Python days I do remember how awesome it was to be able to construct lists so easily. While the syntax is a little strange, it is nice to once again be able to construct lists without much fanfare.</p><h3>Erlang is starting to really excite me</h3><p>As with any language, I get super pumped about the possibilities of it. I've just started scratching the surface here and it really looks cool. I love the functional nature, and the crazy syntax does get my mind ready to be functional. I'll detail more of my adventures here as I get into the error handling, concurrency features and OTP architecture. Like I said: "I've got big plans."</p>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name>2014/2/25/on-learning-erlang</wp:post_name>
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>6</wp:post_id>
+      <wp:status>publish</wp:status>
+      <pubDate>Fri, 07 Mar 2014 15:57:23 +0000</pubDate>
+      <wp:post_date>2014-03-07 15:57:23</wp:post_date>
+      <wp:post_date_gmt>2014-03-07 15:57:23</wp:post_date_gmt>
+      <category domain="post_tag" nicename="erlang"><![CDATA[erlang]]></category>
+      <category domain="post_tag" nicename="elixir"><![CDATA[elixir]]></category>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <title>Year in Review 2013</title>
+      <link>/blog/2014/1/7/year-in-review-2013</link>
+      <content:encoded><![CDATA[<p>&nbsp;I really struggle to write on this blog, but after reading <a href="http://www.kalzumeus.com/2014/01/06/kalzumeus-software-year-in-review-2013/">this</a> and <a href="http://nathanbarry.com/2013-review/">this</a> I was inspired to write a year in review, because quite a bit happened. I'm not sure how to organize this so it'll be somewhat chronological (albeit around certain events).</p><p><font color="#111111"><strong>ERA</strong></font></p><p>At the start of the year, my company <a href="http://www.thesquarefoot.com">TheSquareFoot</a> moved our base of operations to New York City as we just had been accepted into the <a href="http://eranyc.com">Entreprenuers Roundtable Accelerator</a>. I followed them out there for it to take part. The program ran from January to April, and I've got to say that I thoroughly enjoyed it. While being away from Austin and my personal support system was hard, professionally it was very rewarding. I met a lot of interesting people, and I got to enjoy New York as only someone who has lived there can.</p><p>Going through an accelerator is a crazy experience. From the meetings and meetups, the great speakers that came through, it was great to experience it all. It was also a great bonding experience for myself and the cofounders. While they had known each other for a quite a while before they hired me, I feel as if I finally got to know them better, which has contributed positively to our working relationship.</p><p><strong>Hiring a designer</strong></p><p>As part of the ERA program, we quickly identified that we needed a redesign of the site. While our site wasn't exactly ugly (the feedback we got was "It doesn't look that bad"), we noticed that it definitely looked dated. Additionally, while I consider myself a fairly adept programmer both from a front-end and back-end perspective, I do lack a bit in the design arena. I can make things work, but just can't make them look that pretty. I let the guys know that if we really wanted to get some nice whiz bang features out there that I would need some help aesthetically.</p><p>With that in mind, myself and our CEO began a search for a designer. This was a wholly foreign process to me, as while I feel as I know what to look for in an engineer, I was totally lost on finding a designer. While we found a good deal of help from the program it took us about six to seven months of interviewing candidates to narrow it down. And once we finally nailed down who we wanted, it finally became an issue of enticing them to come work with us. Thankfully, we really lucked out with ours and I could not be happier with him and the work he has done with us. And that leads us too...</p><p><strong>The Redesign</strong></p><p>This is probably the thing that I have been most proud of in my career. Not the redesign itself mind you, but the way in which we executed the redesign as a project. When we decided that we would redesign the site, we set ourselves on it in earnest around mid September. Our designer, Ken, put together some great comps to move off of and he and I started transfer around the end of October.</p><p>The business guys, of course wanting to have a timetable, asked for an estimated completion date. I told them that we'd have it done by the end of the year, ready for a launch in January. They agreed that was a good date, and we set upon our work.</p><p>In addition to us updating the product's appearance, we also used the time to hammer down optimal user flows, enhance heavily used existing features, refactor and remove unused or dirty code and generally give the site a breath of fresh air. I took the time to completely rewrite the search functionality into a more modular state as it had been an unholy amalgamation of plain old Javascript, Backbone models and spaghetti view code.</p><p>Even with the large amount of work set in front of us, we were able to get everything done by January and delayed the launch only 2 weeks to allow us to polish it. Early indications are good as the site seems to be performing better in many respects.</p><p><strong>My Own Company</strong></p><p>During the year I had tried to develop an idea of mine that I thought I could expand into a nice bootstraped SaaS, mostly inspired by what <a href="http://www.kalzumeus.com">Patrick McKenzie</a> had done with his two ideas. Taking a cue from him, before I wrote any software I tried talking to people to see if my idea had legs. In short, it didn't. While it was a problem for people, it just wasn't a big enough problem that they would pay me money for it.</p><p>And while this idea didn't pan out, it was interesting to talk to people about their businesses and hear about their needs. I realized that while I can be painfully shy and introverted, the extroverted part of business isn't as scary as I once thought it was.</p><p><strong>Programming and Personal Development</strong></p><p>This unfortunately is something where my skills have lacked. While in general I like to get my hands dirty with a new technology every year, this year I unfortunately had to concentrate on my core skills (Rails, Ruby, JS). I played around briefly with Elixir and Clojure, but was unable to get past the "Hello World" phase, much to my chagrin.</p><p><strong>Where I'd like to go</strong></p><p>I'd like to see continuous success out of TheSquareFoot. I'll be celebrating my two year employment anniversary in June and I'd like nothing more for us to be a profitable business. Additionally, I'd like to have time to tackle a new programming language (I'm thinking Elixir but I'm not sure yet) and finally write a non-trivial app with it. And the final thing I want to try and correct is my lack of design skill. While I know that the best way to get better at something is by doing, I probably will try to take some sort of class to try and get a basis of understanding in design.</p><p> </p>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name>2014/1/7/year-in-review-2013</wp:post_name>
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>7</wp:post_id>
+      <wp:status>publish</wp:status>
+      <pubDate>Sun, 19 Jan 2014 18:20:54 +0000</pubDate>
+      <wp:post_date>2014-01-19 18:20:54</wp:post_date>
+      <wp:post_date_gmt>2014-01-19 18:20:54</wp:post_date_gmt>
+      <category domain="post_tag" nicename="year-in-review"><![CDATA[year-in-review]]></category>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <title>Some pictures from my first month in NYC</title>
+      <link>/blog/2013/1/27/some-pictures-from-my-first-month-in-nyc</link>
+      <content:encoded><![CDATA[<p>There will be more as time goes on but here's a few:</p><p></p><p></p><div class="image-gallery-wrapper">
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105902ee4b0d2690e9c36e7/1359319143999/IMG_0363.jpg" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510590f3e4b04f7510f87051/1359319329667/IMG_0367.jpg" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105912fe4b0886bfa20565b/1359319371039/IMG_0372.jpg" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510591a1e4b00ee3050d7f27/1359319641405/IMG_0373.jpg" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/51069085e4b0c3c708396d6e/1359384729017/picstitch+3.jpg" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5106911be4b00ee3050f721f/1359384868829/picstitch.jpg" />
+  
+
+</div>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name>2013/1/27/some-pictures-from-my-first-month-in-nyc</wp:post_name>
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>8</wp:post_id>
+      <wp:status>publish</wp:status>
+      <pubDate>Tue, 29 Jan 2013 14:45:52 +0000</pubDate>
+      <wp:post_date>2013-01-29 14:45:52</wp:post_date>
+      <wp:post_date_gmt>2013-01-29 14:45:52</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5106911be4b00ee3050f721f/1359384868829/picstitch.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5106911be4b00ee3050f721f/1359384868829/picstitch.jpg</link>
+      <title>attachment-5106911be4b00ee3050f721f</title>
+      <wp:post_name>picstitch-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>9</wp:post_id>
+      <wp:post_parent>8</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-5106911be4b00ee3050f721f]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-5106911be4b00ee3050f721f]]></excerpt:encoded>
+      <pubDate>Mon, 28 Jan 2013 14:54:11 +0000</pubDate>
+      <wp:post_date>2013-01-28 14:54:11</wp:post_date>
+      <wp:post_date_gmt>2013-01-28 14:54:11</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/51069085e4b0c3c708396d6e/1359384729017/picstitch+3.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/51069085e4b0c3c708396d6e/1359384729017/picstitch+3.jpg</link>
+      <title>attachment-51069085e4b0c3c708396d6e</title>
+      <wp:post_name>picstitch-3-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>10</wp:post_id>
+      <wp:post_parent>8</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-51069085e4b0c3c708396d6e]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-51069085e4b0c3c708396d6e]]></excerpt:encoded>
+      <pubDate>Mon, 28 Jan 2013 14:51:41 +0000</pubDate>
+      <wp:post_date>2013-01-28 14:51:41</wp:post_date>
+      <wp:post_date_gmt>2013-01-28 14:51:41</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510591a1e4b00ee3050d7f27/1359319641405/IMG_0373.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510591a1e4b00ee3050d7f27/1359319641405/IMG_0373.jpg</link>
+      <title>attachment-510591a1e4b00ee3050d7f27</title>
+      <wp:post_name>IMG-0373-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>11</wp:post_id>
+      <wp:post_parent>8</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-510591a1e4b00ee3050d7f27]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-510591a1e4b00ee3050d7f27]]></excerpt:encoded>
+      <pubDate>Sun, 27 Jan 2013 20:46:31 +0000</pubDate>
+      <wp:post_date>2013-01-27 20:46:31</wp:post_date>
+      <wp:post_date_gmt>2013-01-27 20:46:31</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105912fe4b0886bfa20565b/1359319371039/IMG_0372.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105912fe4b0886bfa20565b/1359319371039/IMG_0372.jpg</link>
+      <title>attachment-5105912fe4b0886bfa20565b</title>
+      <wp:post_name>IMG-0372-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>12</wp:post_id>
+      <wp:post_parent>8</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-5105912fe4b0886bfa20565b]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-5105912fe4b0886bfa20565b]]></excerpt:encoded>
+      <pubDate>Sun, 27 Jan 2013 20:42:13 +0000</pubDate>
+      <wp:post_date>2013-01-27 20:42:13</wp:post_date>
+      <wp:post_date_gmt>2013-01-27 20:42:13</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510590f3e4b04f7510f87051/1359319329667/IMG_0367.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510590f3e4b04f7510f87051/1359319329667/IMG_0367.jpg</link>
+      <title>attachment-510590f3e4b04f7510f87051</title>
+      <wp:post_name>IMG-0367-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>13</wp:post_id>
+      <wp:post_parent>8</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-510590f3e4b04f7510f87051]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-510590f3e4b04f7510f87051]]></excerpt:encoded>
+      <pubDate>Sun, 27 Jan 2013 20:41:14 +0000</pubDate>
+      <wp:post_date>2013-01-27 20:41:14</wp:post_date>
+      <wp:post_date_gmt>2013-01-27 20:41:14</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105902ee4b0d2690e9c36e7/1359319143999/IMG_0363.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105902ee4b0d2690e9c36e7/1359319143999/IMG_0363.jpg</link>
+      <title>attachment-5105902ee4b0d2690e9c36e7</title>
+      <wp:post_name>IMG-0363-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>14</wp:post_id>
+      <wp:post_parent>8</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-5105902ee4b0d2690e9c36e7]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-5105902ee4b0d2690e9c36e7]]></excerpt:encoded>
+      <pubDate>Sun, 27 Jan 2013 20:37:56 +0000</pubDate>
+      <wp:post_date>2013-01-27 20:37:56</wp:post_date>
+      <wp:post_date_gmt>2013-01-27 20:37:56</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <title>Noob CTO in an Accelerator</title>
+      <link>/blog/2013/1/25/life-in-an-accelerator</link>
+      <content:encoded><![CDATA[<p class="p1"><span class="s1">About a month ago my <a href="http://www.thesquarefoot.com">company</a> and I moved our base of operations to New York City to begin the <a href="http://www.eranyc.com">Entreprenuers Roudntable Accelerator</a>. The following are some of my initial thoughts and impressions after the first month:</span></p><h2><span class="s1">Good for meetings, bad for code</span></h2><p class="p1"><span class="s1">From day one, it was essentially meeting after meeting after meeting. Between mentor meetings, meeting other startups and accelerator events it seemed my calendar was full of end to end blocks of meetings. I had a lot of fun doing them and the information I got from them was invaluable. But I am more of an introvert than extrovert, and talking to people all day (as well as having to be “on”) for that long can be exhausting. At the end of the day, I would look down and realize that I hadn’t been able to write any meaningful code, and didn't really have the energy or focus to start.</span></p><p class="p1"><span class="s1">Proper time/task management is crucial to stay on top of your work, as well as knowing when you need to head to the quiet side of the office and get your head down in some code.&nbsp; My team and I am probably should have had this done before we got here, but we did grab some time to go through our product and prioritize new features and bugs. This helped tremendously, and I was able to get through some low hanging fruit, despite with everything going on.</span></p><h2><span class="s1">Collaborative spaces</span></h2><p class="p1"><span class="s1">Incubators/accelerators tend to put you in collaborative spaces where all the startups are sitting in one area. You meet new people and hear great ideas, its easy to get feedback and in general its just a good time (lots of silliness). But, and I can’t stress this enough, it’s almost impossible to get hard code work done in these spaces.</span></p><p class="p1"><span class="s1">While my experience is limited to ERA, there are quiet areas and times available that allow people to focus on their work, and you have to be able to take advantage of them.&nbsp; I get the most done early in the morning, and as such, I'm almost always the first person in the office everyday</span>. Also: noise canceling headphones. Get them. They’re worth their weight in gold.</p><h2>Networking, networking, networking</h2><p class="p1"><span class="s1">As I said before, I am more of an introvert than extrovert. I have no problem interacting with people and most people assume that I’m in my element in big crowds, but in reality I recharge when I’m alone and able to think by myself. That being said, some of the best &nbsp;advice I have gotten is to "network like your life depended on it". I have met some great engineers,&nbsp;entrepreneurs and just people in general. And while I love my current job and team, you never know who you might work with next.</span></p><p class="p1">Probably one of the greatest benefits is working in close proximity to other engineers that use different technologies and techniques. In our class alone we've got <a href="http://rubyonrails.org/">Rails</a>, <a href="http://flask.pocoo.org/">Flask</a>, <a href="http://nodejs.org/">Node.js</a> as well <a href="http://backbonejs.org/">Backbone</a> and <a href="http://angularjs.org/">Angular</a> for the client side. One of the companies is using <a href="http://http://www.neo4j.org">neo4j</a> which I hadn't even heard of till I met them. Along with this exposure to different technologies there is also an exposure to different techniques and methods of project management as well as the different development and analytics tools people use. Every Tuesday we have a CTO roundtable and so far they have been amazing. We are actually beginning a series where we try to teach each other about a subject which we have knowledge and I'll be sure to expound on my travails with Backbone.js (I'll also try to post some articles on the subject on this blog).</p><h2>Being myself</h2><p class="p1"><span class="s1">I'll admit, when I first got here, I was intimidated. When I first arrived and was introducing myself to others, I realized that the majority of my compatriots were extremely smart. Stanford, Harvard, MIT, Yale, Brown, MBA's, PHD's. Then we started meeting with the mentors, and I was amazed at both their resume's and just how sharp some of them were. After five minutes of describing our business, they were able to understand and contribute to our business discussions. I've been with the company for 6 months and I'm still struggling to understand some aspects of it.&nbsp;</span>All of this is quite intimidating to a guy who was lucky to graduate from a state school and up until three years ago was stuck doing .NET development at an insurance giant.</p><p class="p1">With all that said, my experiences with everyone have been amazing, and my intimidation has melted away seemingly overnight. I remember what a drill&nbsp;sergeant in basic training had said to me when I had expressed my nervousness at meeting a high ranking officer during an inspection: "Why are you intimidated? He puts his uniform on the same way you do." The point being, that he was once like me, and the only difference was time.</p><h2>Whew!</h2><p class="p1">It's been a whirlwind. I'm trying to make these posts weekly or bi-weekly,&nbsp;depending&nbsp;on how much my other duties pull me away from it. Also, I intend to make these posts some what more technical in nature as I describe some of the new features that we will be implementing for our product (<a href="http://www.quickmeme.com/meme/3sqv7t/">PostGIS is coming...</a>)</p><p class="p1">I'll be posting here probably everyweek, but also cross posting on our company blog <a href="http://www.thesquarefoot.com/blog">here</a>.</p><p class="p1"></p>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name>2013/1/25/life-in-an-accelerator</wp:post_name>
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>15</wp:post_id>
+      <wp:status>publish</wp:status>
+      <pubDate>Mon, 28 Jan 2013 14:55:40 +0000</pubDate>
+      <wp:post_date>2013-01-28 14:55:40</wp:post_date>
+      <wp:post_date_gmt>2013-01-28 14:55:40</wp:post_date_gmt>
+      <category domain="post_tag" nicename="accelerators"><![CDATA[Accelerators]]></category>
+      <category domain="post_tag" nicename="nyc"><![CDATA[NYC]]></category>
+      <category domain="post_tag" nicename="cto"><![CDATA[CTO]]></category>
+      <category domain="post_tag" nicename="era"><![CDATA[ERA]]></category>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <title>Hallo Welt</title>
+      <link>/blog/2013/1/8/hallo-welt</link>
+      <content:encoded><![CDATA[<p>So at first, I thought I would build my own blog, because "Why not?"</p><p>"I'm a programmer, I like building stuff, I've got some serious Ruby chops. And lord knows I can figure my own publishing needs out better than all the thousands of different blog platforms out there."</p><p>But then I tried to build a blog platform for our <a href="http://www.thesquarefoot.com" data-link-type="external">startup</a><a href="http://www.thesquarefoot.com" data-link-type="external"></a>.</p><p>The list of things it did was short. The list of things it didn't do was long. And it was constantly breaking (still is to this day).</p><p>That's when I looked up this word:</p><blockquote><strong>Hubris</strong>&nbsp;(<span class="nowrap">pron.:&nbsp;<span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English">/</a></span><span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English#Key">ˈ</a></span><span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English#Key">h</a></span><span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English#Key">juː</a></span><span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English#Key">b</a></span><span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English#Key">r</a></span><span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English#Key">ɪ</a></span><span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English#Key">s</a></span><span class="IPA"><a href="http://en.wikipedia.org/wiki/Help:IPA_for_English">/</a></span></span>), also&nbsp;<strong>hybris</strong>, from&nbsp;<a href="http://en.wikipedia.org/wiki/Ancient_Greek">ancient Greek</a>&nbsp;<a class="extiw" href="http://en.wiktionary.org/wiki/%E1%BD%95%CE%B2%CF%81%CE%B9%CF%82">ὕβρις</a>, means extreme&nbsp;<a href="http://en.wikipedia.org/wiki/Pride">pride</a>&nbsp;or arrogance. Hubris often indicates a loss of contact with&nbsp;<a href="http://en.wikipedia.org/wiki/Reality">reality</a>&nbsp;and an overestimation of one's own competence or capabilities, especially when the person exhibiting it is in a position of power.<br></blockquote><p>Pride and arrogance is something that I struggle with on a daily basis as a developer. I always think I can build the best tool, the best website and the best software.</p><p>This blog is will hopefully be my starting point for changing all of that.</p>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name>2013/1/8/hallo-welt</wp:post_name>
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>16</wp:post_id>
+      <wp:status>publish</wp:status>
+      <pubDate>Fri, 25 Jan 2013 16:41:43 +0000</pubDate>
+      <wp:post_date>2013-01-25 16:41:43</wp:post_date>
+      <wp:post_date_gmt>2013-01-25 16:41:43</wp:post_date_gmt>
+      <category domain="post_tag" nicename="programming"><![CDATA[programming]]></category>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <title>Deploying a Rails app to a VPS with Capistrano 3</title>
+      <link>/blog/2014/4/21/deploying-a-rails-app-to-a-vps-with-capistrano-3</link>
+      <content:encoded><![CDATA[<p>Since Linode recently came out with this, I decided it was high time I move some of my personal projects off of Heroku and to a VPS instead. While I like Heroku a lot, I thought it would be a good ideato sharpen my sys admin skills (which would have come in handy at my last job).</p><p>To that end I tried to follow <a href="http://railscasts.com/episodes/335-deploying-to-a-vps">this</a> screencast. I love Railscasts and Ryan Bates has been a godsend for Rails related stuff, but the above mentioned screen cast has gotten a little out of date as Capistrano has since moved to a more Chef-like setup with their 3.0 release.</p><p>The following are some of the tweaks I used to setup my server.</p><p>Eventually I want to get to get up to date working with some sort of provisioning tool, such as Chef or Ansible, as well and also normal monitoring tools (monit, logrotate, etc).</p>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name>2014/4/21/deploying-a-rails-app-to-a-vps-with-capistrano-3</wp:post_name>
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>17</wp:post_id>
+      <wp:status>draft</wp:status>
+      <pubDate>Fri, 25 Apr 2014 13:38:10 +0000</pubDate>
+      <wp:post_date>2014-04-25 13:38:10</wp:post_date>
+      <wp:post_date_gmt>2014-04-25 13:38:10</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <title>"Holy distributed computing Batman!"</title>
+      <link>/blog/2014/4/2/learning-otp-fsms</link>
+      <content:encoded><![CDATA[<p>About two month ago, I began looking at Erlang/Elixir and I really loved the things that I learned. While I had initially thrown myself into it with reckless abandon, I had to slow down a little as I took a new job and had to refocus on Rails (2.3 no less...). I've decided to pick it back up and get into some heavier duty applications. While the syntax of Erlang is now pretty familiar to me, I'm finally trying to wrap my head around the OTP nature of the language and it's libraries, which most tout as it's greatest strength.</p><p>To that end, I've decided to write a little FSM that simulates a bank ACH transfer between processes. Basically, there will be an account agent, that will keep track of how much money it has. There will be a</p><p> </p><p> </p>]]></content:encoded>
+      <excerpt:encoded />
+      <wp:post_name>2014/4/2/learning-otp-fsms</wp:post_name>
+      <wp:post_type>post</wp:post_type>
+      <wp:post_id>18</wp:post_id>
+      <wp:status>draft</wp:status>
+      <pubDate>Tue, 22 Apr 2014 15:49:38 +0000</pubDate>
+      <wp:post_date>2014-04-22 15:49:38</wp:post_date>
+      <wp:post_date_gmt>2014-04-22 15:49:38</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+      <wp:comment_status>open</wp:comment_status>
+    </item>
+    <item>
+      <link>/grid/</link>
+      <title>Grid Design</title>
+      <pubDate>Mon, 09 Jul 2012 16:25:12 +0000</pubDate>
+      <content:encoded><![CDATA[<h1 class="text-align-center">Grid Design</h1><div class="image-gallery-wrapper">
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a887057a0/1341847578627/4309061571_18f0f30838_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a887057a1/1341847452969/4309065391_f357d26507_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a8870579f/1341847578632/4309069069_b8baaae4ed_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a887057a2/1341847408877/4309792778_75b236730a_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a8870579e/1341847578645/4309796174_00be8aacd3_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a8870579c/1341932151976/4309792778_75b236730a_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a8870579a/1341932155798/4309796174_00be8aacd3_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a8870579b/1341932151977/4309069069_b8baaae4ed_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a88705799/1341932155910/4309061571_18f0f30838_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705563/50e4785ce4b0131a8870579d/1341932027098/4309065391_f357d26507_b.jpg?format=original" />
+  
+
+</div>]]></content:encoded>
+      <wp:post_name>grid</wp:post_name>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_id>19</wp:post_id>
+      <wp:status>publish</wp:status>
+    </item>
+    <item>
+      <link>/slideshow/</link>
+      <title>Slideshow Design</title>
+      <pubDate>Mon, 09 Jul 2012 16:25:58 +0000</pubDate>
+      <content:encoded><![CDATA[<h1 class="text-align-center">Slideshow Design</h1><div class="image-gallery-wrapper">
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705562/50e4785ce4b0131a88705795/1341847502298/4309061571_18f0f30838_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705562/50e4785ce4b0131a88705797/1341847332073/4309065391_f357d26507_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705562/50e4785ce4b0131a88705794/1341847502318/4309069069_b8baaae4ed_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705562/50e4785ce4b0131a88705798/1341847332055/4309792778_75b236730a_b.jpg?format=original" />
+  
+
+  
+   <img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a88705562/50e4785ce4b0131a88705796/1341847376568/4309796174_00be8aacd3_b.jpg?format=original" />
+  
+
+</div>]]></content:encoded>
+      <wp:post_name>slideshow</wp:post_name>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_id>20</wp:post_id>
+      <wp:status>publish</wp:status>
+    </item>
+    <item>
+      <title>NYC - Month 1</title>
+      <link>/nyc/</link>
+      <pubDate>Tue, 29 Jan 2013 14:45:31 +0000</pubDate>
+      <content:encoded><![CDATA[<div><img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5106911be4b00ee3050f721f/1359384868829/picstitch.jpg" /><img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/51069085e4b0c3c708396d6e/1359384729017/picstitch+3.jpg" /><img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510591a1e4b00ee3050d7f27/1359319641405/IMG_0373.jpg" /><img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105912fe4b0886bfa20565b/1359319371039/IMG_0372.jpg" /><img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510590f3e4b04f7510f87051/1359319329667/IMG_0367.jpg" /><img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105902ee4b0d2690e9c36e7/1359319143999/IMG_0363.jpg" /><img src="http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510690eee4b08ef8a160e509/1359384833393/picstitch+2.jpg" /></div>]]></content:encoded>
+      <wp:post_name>nyc</wp:post_name>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_id>21</wp:post_id>
+      <wp:status>publish</wp:status>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5106911be4b00ee3050f721f/1359384868829/picstitch.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5106911be4b00ee3050f721f/1359384868829/picstitch.jpg</link>
+      <title>attachment-5106911be4b00ee3050f721f</title>
+      <wp:post_name>picstitch-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>22</wp:post_id>
+      <wp:post_parent>21</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-5106911be4b00ee3050f721f]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-5106911be4b00ee3050f721f]]></excerpt:encoded>
+      <pubDate>Mon, 28 Jan 2013 14:54:11 +0000</pubDate>
+      <wp:post_date>2013-01-28 14:54:11</wp:post_date>
+      <wp:post_date_gmt>2013-01-28 14:54:11</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/51069085e4b0c3c708396d6e/1359384729017/picstitch+3.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/51069085e4b0c3c708396d6e/1359384729017/picstitch+3.jpg</link>
+      <title>attachment-51069085e4b0c3c708396d6e</title>
+      <wp:post_name>picstitch-3-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>23</wp:post_id>
+      <wp:post_parent>21</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-51069085e4b0c3c708396d6e]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-51069085e4b0c3c708396d6e]]></excerpt:encoded>
+      <pubDate>Mon, 28 Jan 2013 14:51:41 +0000</pubDate>
+      <wp:post_date>2013-01-28 14:51:41</wp:post_date>
+      <wp:post_date_gmt>2013-01-28 14:51:41</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510591a1e4b00ee3050d7f27/1359319641405/IMG_0373.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510591a1e4b00ee3050d7f27/1359319641405/IMG_0373.jpg</link>
+      <title>attachment-510591a1e4b00ee3050d7f27</title>
+      <wp:post_name>IMG-0373-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>24</wp:post_id>
+      <wp:post_parent>21</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-510591a1e4b00ee3050d7f27]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-510591a1e4b00ee3050d7f27]]></excerpt:encoded>
+      <pubDate>Sun, 27 Jan 2013 20:46:31 +0000</pubDate>
+      <wp:post_date>2013-01-27 20:46:31</wp:post_date>
+      <wp:post_date_gmt>2013-01-27 20:46:31</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105912fe4b0886bfa20565b/1359319371039/IMG_0372.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105912fe4b0886bfa20565b/1359319371039/IMG_0372.jpg</link>
+      <title>attachment-5105912fe4b0886bfa20565b</title>
+      <wp:post_name>IMG-0372-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>25</wp:post_id>
+      <wp:post_parent>21</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-5105912fe4b0886bfa20565b]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-5105912fe4b0886bfa20565b]]></excerpt:encoded>
+      <pubDate>Sun, 27 Jan 2013 20:42:13 +0000</pubDate>
+      <wp:post_date>2013-01-27 20:42:13</wp:post_date>
+      <wp:post_date_gmt>2013-01-27 20:42:13</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510590f3e4b04f7510f87051/1359319329667/IMG_0367.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510590f3e4b04f7510f87051/1359319329667/IMG_0367.jpg</link>
+      <title>attachment-510590f3e4b04f7510f87051</title>
+      <wp:post_name>IMG-0367-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>26</wp:post_id>
+      <wp:post_parent>21</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-510590f3e4b04f7510f87051]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-510590f3e4b04f7510f87051]]></excerpt:encoded>
+      <pubDate>Sun, 27 Jan 2013 20:41:14 +0000</pubDate>
+      <wp:post_date>2013-01-27 20:41:14</wp:post_date>
+      <wp:post_date_gmt>2013-01-27 20:41:14</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105902ee4b0d2690e9c36e7/1359319143999/IMG_0363.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/5105902ee4b0d2690e9c36e7/1359319143999/IMG_0363.jpg</link>
+      <title>attachment-5105902ee4b0d2690e9c36e7</title>
+      <wp:post_name>IMG-0363-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>27</wp:post_id>
+      <wp:post_parent>21</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-5105902ee4b0d2690e9c36e7]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-5105902ee4b0d2690e9c36e7]]></excerpt:encoded>
+      <pubDate>Sun, 27 Jan 2013 20:37:56 +0000</pubDate>
+      <wp:post_date>2013-01-27 20:37:56</wp:post_date>
+      <wp:post_date_gmt>2013-01-27 20:37:56</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+    <item>
+      <wp:attachment_url>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510690eee4b08ef8a160e509/1359384833393/picstitch+2.jpg</wp:attachment_url>
+      <link>http://static.squarespace.com/static/50e47858e4b0131a88705552/50e47858e4b0131a8870555e/510690eee4b08ef8a160e509/1359384833393/picstitch+2.jpg</link>
+      <title>attachment-510690eee4b08ef8a160e509</title>
+      <wp:post_name>picstitch-2-jpg</wp:post_name>
+      <wp:post_type>attachment</wp:post_type>
+      <wp:post_id>28</wp:post_id>
+      <wp:post_parent>21</wp:post_parent>
+      <wp:status>inherit</wp:status>
+      <content:encoded><![CDATA[img-510690eee4b08ef8a160e509]]></content:encoded>
+      <excerpt:encoded><![CDATA[exc-510690eee4b08ef8a160e509]]></excerpt:encoded>
+      <pubDate>Mon, 28 Jan 2013 14:53:26 +0000</pubDate>
+      <wp:post_date>2013-01-28 14:53:26</wp:post_date>
+      <wp:post_date_gmt>2013-01-28 14:53:26</wp:post_date_gmt>
+      <dc:creator>jonkgrimes@gmail.com</dc:creator>
+    </item>
+  </channel>
+</rss>
+
