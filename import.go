@@ -7,6 +7,7 @@ import (
 	"time"
 
 	_ "github.com/lib/pq"
+	"github.com/microcosm-cc/bluemonday"
 )
 
 type Rss struct {
@@ -28,12 +29,13 @@ type Item struct {
 	ItemType    string   `xml:"post_type"`
 }
 
-func runImport() {
+func importBlog() {
 	const layout = "Mon, 2 Jan 2006 15:04:05 -0700"
+	p := bluemonday.StrictPolicy()
 
 	db := InitDb()
 
-	file, err := os.Open("tmp/wordpress.xml")
+	file, err := os.Open("data/wordpress.xml")
 	if err != nil {
 		fmt.Println("Error opening file: ", err)
 	}
@@ -50,7 +52,7 @@ func runImport() {
 			t, _ := time.Parse(layout, item.PublishedAt)
 			post := Post{
 				Title:     item.Title,
-				Body:      item.Content,
+				Body:      p.Sanitize(item.Content),
 				CreatedAt: t,
 				UpdatedAt: t,
 			}
@@ -58,3 +60,30 @@ func runImport() {
 		}
 	}
 }
+
+/*
+type Post struct {
+	Id        int64
+	Title     string `sql:"size:255"`
+	Body      string `sql:"text"`
+	CreatedAt time.Time
+	UpdatedAt time.Time
+}
+
+func InitDb() gorm.DB {
+	db, err := gorm.Open("postgres", "user=jonkgrimes dbname=blog_development sslmode=disable")
+
+	checkErr(err, "gorm.Open failed")
+
+	db.AutoMigrate(&Post{})
+	db.LogMode(true)
+
+	return db
+}
+
+func checkErr(err error, msg string) {
+	if err != nil {
+		log.Fatalln(msg, err)
+	}
+}
+*/
