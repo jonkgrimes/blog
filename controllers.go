@@ -23,18 +23,24 @@ func (c *AppController) Action(a Action) http.Handler {
 type HomeController struct {
 	AppController
 	*render.Render
-	gorm.DB
+	db gorm.DB
 }
 
 type PostsController struct {
 	AppController
 	*render.Render
-	gorm.DB
+	db gorm.DB
+}
+
+type AdminController struct {
+	AppController
+	*render.Render
+	db gorm.DB
 }
 
 func (c *HomeController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []Post
-	c.Order("created_at DESC").Find(&posts)
+	c.db.Order("created_at DESC").Find(&posts)
 
 	c.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
 	return nil
@@ -49,9 +55,17 @@ func (c *PostsController) Show(rw http.ResponseWriter, r *http.Request) error {
 	post := Post{}
 
 	id := mux.Vars(r)["id"]
-	c.First(&post, id)
+	c.db.First(&post, id)
 
 	c.HTML(rw, http.StatusOK, "posts/show", &post)
 
+	return nil
+}
+
+func (c *AdminController) Index(rw http.ResponseWriter, r *http.Request) error {
+	var posts []Post
+	c.db.Order("created_at DESC").Find(&posts)
+
+	c.HTML(rw, http.StatusOK, "admin/index", &HomePageView{Posts: posts})
 	return nil
 }

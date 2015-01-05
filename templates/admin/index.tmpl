@@ -1,0 +1,21 @@
+<h2>Admin</h2>
+<table>
+  <thead>
+    <th>Title</th>
+    <th></th>
+  </thead>
+  <tbody>
+    {{range .Posts}}
+    <tr>
+      <td>{{ .Title }}</td>
+      <td>
+        <a href="/admin/posts/{{.Id}}/edit">Edit</a>
+        |
+        <a href="/admin/posts/{{.Id}}/publish">Publish</a>
+        |
+        <a href="/admin/posts/{{.Id}}">Destroy</a>
+      </td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>

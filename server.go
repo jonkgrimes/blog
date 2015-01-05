@@ -23,17 +23,21 @@ func main() {
 	})
 	db := InitDb()
 
-	c := &HomeController{Render: renderer, DB: db}
-	p := &PostsController{Render: renderer, DB: db}
+	c := &HomeController{Render: renderer, db: db}
+	p := &PostsController{Render: renderer, db: db}
+	a := &AdminController{Render: renderer, db: db}
 
+	// public routes
 	router := mux.NewRouter().StrictSlash(true)
 	router.Handle("/", c.Action(c.Index))
 	router.Handle("/about", c.Action(c.About))
 
-	router.PathPrefix("/posts/{id}").Subrouter()
-
 	postRouter := router.PathPrefix("/posts/{id}").Subrouter()
 	postRouter.Methods("GET").Handler(p.Action(p.Show))
+
+	// admin routes
+	adminRouter := router.PathPrefix("/admin").Subrouter()
+	adminRouter.Methods("GET").Handler(a.Action(a.Index))
 
 	n.UseHandler(router)
 
