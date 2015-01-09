@@ -57,7 +57,7 @@ func (c *PostsController) Show(rw http.ResponseWriter, r *http.Request) error {
 	id := mux.Vars(r)["id"]
 	c.db.First(&post, id)
 
-	c.HTML(rw, http.StatusOK, "posts/show", &post)
+	c.HTML(rw, http.StatusOK, "posts/show", &PostView{Post: post})
 
 	return nil
 }
@@ -82,5 +82,17 @@ func (c *AdminController) Edit(rw http.ResponseWriter, r *http.Request) error {
 	c.db.First(&post, id)
 
 	c.HTML(rw, http.StatusOK, "admin/posts/edit", &post)
+	return nil
+}
+
+func (c *AdminController) Update(rw http.ResponseWriter, r *http.Request) error {
+	post := Post{}
+
+	id := mux.Vars(r)["id"]
+	c.db.First(&post, id)
+
+	// update will go here
+
+	http.Redirect(rw, r, "/admin", http.StatusFound)
 	return nil
 }
