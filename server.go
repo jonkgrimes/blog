@@ -37,10 +37,10 @@ func main() {
 	postRouter.Path("/{id}").Methods("GET").Handler(p.Action(p.Show))
 
 	// admin routes
-	adminRouter := mux.NewRouter().StrictSlash(true).PathPrefix("/admin")
-	adminRouter.Path("/").Handler(a.Action(a.Index))
-	adminRouter.Path("/posts/new").Handler(a.Action(a.Show))
-	adminRouter.Path("/posts/{id}/edit").Handler(a.Action(a.Edit))
+	adminRouter := mux.NewRouter().StrictSlash(true)
+	adminRouter.Path("/admin/").Handler(a.Action(a.Index))
+	adminRouter.Path("/admin/posts/new").Handler(a.Action(a.New))
+	adminRouter.Path("/admin/posts/{id}/edit").Handler(a.Action(a.Edit))
 
 	router.PathPrefix("/admin").Handler(negroni.New(
 		negroni.HandlerFunc(AdminAuth),

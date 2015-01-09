@@ -70,6 +70,11 @@ func (c *AdminController) Index(rw http.ResponseWriter, r *http.Request) error {
 	return nil
 }
 
+func (c *AdminController) New(rw http.ResponseWriter, r *http.Request) error {
+	c.HTML(rw, http.StatusOK, "admin/posts/new", nil)
+	return nil
+}
+
 func (c *AdminController) Edit(rw http.ResponseWriter, r *http.Request) error {
 	post := Post{}
 
