@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -32,12 +33,19 @@ func main() {
 	router.Handle("/", c.Action(c.Index))
 	router.Handle("/about", c.Action(c.About))
 
-	postRouter := router.PathPrefix("/posts/{id}").Subrouter()
-	postRouter.Methods("GET").Handler(p.Action(p.Show))
+	postRouter := router.PathPrefix("/posts").Subrouter()
+	postRouter.Path("/{id}").Methods("GET").Handler(p.Action(p.Show))
 
 	// admin routes
-	adminRouter := router.PathPrefix("/admin").Subrouter()
-	adminRouter.Methods("GET").Handler(a.Action(a.Index))
+	adminRouter := mux.NewRouter().StrictSlash(true).PathPrefix("/admin")
+	adminRouter.Path("/").Handler(a.Action(a.Index))
+	adminRouter.Path("/posts/new").Handler(a.Action(a.Show))
+	adminRouter.Path("/posts/{id}/edit").Handler(a.Action(a.Edit))
+
+	router.PathPrefix("/admin").Handler(negroni.New(
+		negroni.HandlerFunc(AdminAuth),
+		negroni.Wrap(adminRouter),
+	))
 
 	n.UseHandler(router)
 
@@ -59,4 +67,9 @@ func checkErr(err error, msg string) {
 	if err != nil {
 		log.Fatalln(msg, err)
 	}
+}
+
+func AdminAuth(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
+	fmt.Println("Authenticate...")
+	next(w, r)
 }

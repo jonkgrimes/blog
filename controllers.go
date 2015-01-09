@@ -69,3 +69,13 @@ func (c *AdminController) Index(rw http.ResponseWriter, r *http.Request) error {
 	c.HTML(rw, http.StatusOK, "admin/index", &HomePageView{Posts: posts})
 	return nil
 }
+
+func (c *AdminController) Edit(rw http.ResponseWriter, r *http.Request) error {
+	post := Post{}
+
+	id := mux.Vars(r)["id"]
+	c.db.First(&post, id)
+
+	c.HTML(rw, http.StatusOK, "admin/posts/edit", &post)
+	return nil
+}
