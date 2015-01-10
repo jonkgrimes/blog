@@ -1,6 +1,7 @@
 package main
 
 import (
+	"html/template"
 	"time"
 
 	"github.com/russross/blackfriday"
@@ -36,6 +37,6 @@ func (p *PostView) PrettyCreatedAt() string {
 	return p.Post.CreatedAt.Format(layout)
 }
 
-func (p *PostView) Body() string {
-	return string(blackfriday.MarkdownCommon([]byte(p.Post.Body)))
+func (p *PostView) Body() template.HTML {
+	return template.HTML(blackfriday.MarkdownCommon([]byte(p.Post.Body)))
 }
