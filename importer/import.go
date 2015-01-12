@@ -69,8 +69,13 @@ type Post struct {
 	UpdatedAt time.Time
 }
 
-func InitDb() gorm.DB {
-	db, err := gorm.Open("postgres", "user=jonkgrimes dbname=blog_development sslmode=disable")
+func InitDb(c *Config) gorm.DB {
+	tmpl, err := template.New("connection").Parse("user={{.DbUser}}{{if .DbPassword}} password={{.DbPassword}}{{end}} dbname={{.DbName}} sslmode=disable")
+	var b bytes.Buffer
+	err = tmpl.Execute(&b, c)
+	connString := b.String()
+
+	db, err := gorm.Open("postgres", connString)
 
 	checkErr(err, "gorm.Open failed")
 
