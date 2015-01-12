@@ -39,10 +39,8 @@ func main() {
 	)
 
 	if config.Environment == "production" {
-		n.Use(
-			negronigorelic.New(config.NewRelicKey, "blog", true),
-			gzip.Gzip(gzip.DefaultCompression),
-		)
+		n.Use(negronigorelic.New(config.NewRelicKey, "blog", true))
+		n.Use(gzip.Gzip(gzip.DefaultCompression))
 	}
 
 	renderer := render.New(render.Options{
