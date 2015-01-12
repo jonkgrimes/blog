@@ -29,7 +29,7 @@ type Item struct {
 	ItemType    string   `xml:"post_type"`
 }
 
-func importBlog() {
+func main() {
 	const layout = "Mon, 2 Jan 2006 15:04:05 -0700"
 	p := bluemonday.StrictPolicy()
 
@@ -61,7 +61,6 @@ func importBlog() {
 	}
 }
 
-/*
 type Post struct {
 	Id        int64
 	Title     string `sql:"size:255"`
@@ -86,4 +85,3 @@ func checkErr(err error, msg string) {
 		log.Fatalln(msg, err)
 	}
 }
-*/

@@ -4,15 +4,30 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"text/template"
 
 	"github.com/codegangsta/negroni"
+	"github.com/danryan/env"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	"gopkg.in/unrolled/render.v1"
 )
 
+type Config struct {
+	DbName             string `env:"key=DATABASE_NAME default=blog_development"`
+	DbUser             string `env:"key=DATABASE_USER default=jonkgrimes"`
+	DbPassword         string `env:"key=DATABASE_PASSWORD"`
+	Port               string `env:"key=BLOG_PORT default=:8080"`
+	Environment        string `env:"key=ENVIRONMENT default=development"`
+	NewRelicLicenseKey string `env:"key=NEW_RELIC_LICENSE_KEY"`
+}
+
 func main() {
+	config := &Config{}
+	if err := env.Process(config); err != nil {
+		fmt.Println(err)
+	}
 
 	n := negroni.New(
 		negroni.NewRecovery(),
@@ -23,7 +38,7 @@ func main() {
 	renderer := render.New(render.Options{
 		Layout: "layout",
 	})
-	db := InitDb()
+	db := InitDb(config)
 
 	c := &HomeController{Render: renderer, db: db}
 	p := &PostsController{Render: renderer, db: db}
@@ -50,11 +65,19 @@ func main() {
 
 	n.UseHandler(router)
 
-	n.Run(":8080")
+	n.Run(config.Port)
 }
 
-func InitDb() gorm.DB {
-	db, err := gorm.Open("postgres", "user=jonkgrimes dbname=blog_development sslmode=disable")
+func InitDb(c *Config) gorm.DB {
+	connTemplate := "user={{.DbUser}} {{if .DbPassword}}password={{.DbPassword}}{{end}} dbname={{.DbName}} sslmode=disable"
+	var b bytes.Buffer
+	err := template.ExecuteTemplate(b, connTemplate, c)
+
+	connString := b.String()
+
+	fmt.Println(connString)
+
+	db, err := gorm.Open("postgres", connString)
 
 	checkErr(err, "gorm.Open failed")
 
