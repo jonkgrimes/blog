@@ -13,6 +13,7 @@ import (
 )
 
 func main() {
+
 	n := negroni.New(
 		negroni.NewRecovery(),
 		negroni.NewLogger(),
@@ -49,7 +50,7 @@ func main() {
 
 	n.UseHandler(router)
 
-	n.Run(":3000")
+	n.Run(":8080")
 }
 
 func InitDb() gorm.DB {

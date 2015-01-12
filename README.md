@@ -11,12 +11,16 @@ Things to do:
 - [ ] updating posts
 - [ ] some nicer styles
 - [ ] admin auth
-- [ ] Google Analytics
+- [x] Google Analytics
 - [ ] get a js editor in place
 - [ ] figure out how to deploy this thing
 - [ ] full fleged admin interface
-- [ ] finish out about page
+- [x] finish out about page
 - [ ] hookup newrelic
 - [ ] add images
-- [ ] remove any sensitive data
+- [x] remove any sensitive data
 - [x] import Wordpress export
+- [ ] Disqus
+- [ ] Post preivews
+- [ ] Post archives
+- [ ] Pagination on posts
