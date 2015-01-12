@@ -10,6 +10,7 @@ import (
 	"github.com/codegangsta/negroni"
 	"github.com/danryan/env"
 	"github.com/gorilla/mux"
+	"github.com/jingweno/negroni-gorelic"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	"gopkg.in/unrolled/render.v1"
@@ -35,6 +36,10 @@ func main() {
 		negroni.NewLogger(),
 		negroni.NewStatic(http.Dir("public")),
 	)
+
+	if config.Environment == "production" {
+		n.Use(negronigorelic.New(config.NewRelicKey, "blog", true))
+	}
 
 	renderer := render.New(render.Options{
 		Layout: "layout",
@@ -74,8 +79,6 @@ func InitDb(c *Config) gorm.DB {
 	var b bytes.Buffer
 	err = tmpl.Execute(&b, c)
 	connString := b.String()
-
-	fmt.Println(connString)
 
 	db, err := gorm.Open("postgres", connString)
 
