@@ -13,6 +13,7 @@ import (
 	"github.com/jingweno/negroni-gorelic"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
+	"github.com/phyber/negroni-gzip/gzip"
 	"gopkg.in/unrolled/render.v1"
 )
 
@@ -38,7 +39,10 @@ func main() {
 	)
 
 	if config.Environment == "production" {
-		n.Use(negronigorelic.New(config.NewRelicKey, "blog", true))
+		n.Use(
+			negronigorelic.New(config.NewRelicKey, "blog", true),
+			gzip.Gzip(gzip.DefaultCompression),
+		)
 	}
 
 	renderer := render.New(render.Options{
