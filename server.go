@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"log"
 	"net/http"
@@ -15,9 +16,9 @@ import (
 )
 
 type Config struct {
-	DbName             string `env:"key=DATABASE_NAME default=blog_development"`
-	DbUser             string `env:"key=DATABASE_USER default=jonkgrimes"`
-	DbPassword         string `env:"key=DATABASE_PASSWORD"`
+	DbName             string `env:"key=BLOG_DATABASE_NAME default=blog_development"`
+	DbUser             string `env:"key=BLOG_DATABASE_USER default=jonkgrimes"`
+	DbPassword         string `env:"key=BLOG_DATABASE_PASSWORD"`
 	Port               string `env:"key=BLOG_PORT default=:8080"`
 	Environment        string `env:"key=ENVIRONMENT default=development"`
 	NewRelicLicenseKey string `env:"key=NEW_RELIC_LICENSE_KEY"`
@@ -69,10 +70,9 @@ func main() {
 }
 
 func InitDb(c *Config) gorm.DB {
-	connTemplate := "user={{.DbUser}} {{if .DbPassword}}password={{.DbPassword}}{{end}} dbname={{.DbName}} sslmode=disable"
+	tmpl, err := template.New("connection").Parse("user={{.DbUser}}{{if .DbPassword}} password={{.DbPassword}}{{end}} dbname={{.DbName}} sslmode=disable")
 	var b bytes.Buffer
-	err := template.ExecuteTemplate(b, connTemplate, c)
-
+	err = tmpl.Execute(&b, c)
 	connString := b.String()
 
 	fmt.Println(connString)
