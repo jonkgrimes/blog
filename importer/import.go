@@ -1,14 +1,28 @@
 package main
 
 import (
+	"bytes"
 	"encoding/xml"
 	"fmt"
+	"log"
 	"os"
+	"text/template"
 	"time"
 
+	"github.com/danryan/env"
+	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	"github.com/microcosm-cc/bluemonday"
 )
+
+type Config struct {
+	DbName      string `env:"key=BLOG_DATABASE_NAME default=blog_development"`
+	DbUser      string `env:"key=BLOG_DATABASE_USER default=jonkgrimes"`
+	DbPassword  string `env:"key=BLOG_DATABASE_PASSWORD"`
+	Port        string `env:"key=BLOG_PORT default=:8080"`
+	Environment string `env:"key=ENVIRONMENT default=development"`
+	NewRelicKey string `env:"key=NEW_RELIC_KEY"`
+}
 
 type Rss struct {
 	XMLName xml.Name `xml:"rss"`
@@ -30,12 +44,17 @@ type Item struct {
 }
 
 func main() {
+	config := &Config{}
+	if err := env.Process(config); err != nil {
+		fmt.Println(err)
+	}
+
 	const layout = "Mon, 2 Jan 2006 15:04:05 -0700"
 	p := bluemonday.StrictPolicy()
 
-	db := InitDb()
+	db := InitDb(config)
 
-	file, err := os.Open("data/wordpress.xml")
+	file, err := os.Open("wordpress.xml")
 	if err != nil {
 		fmt.Println("Error opening file: ", err)
 	}

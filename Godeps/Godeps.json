@@ -1,0 +1,66 @@
+{
+	"ImportPath": "blog",
+	"GoVersion": "go1.3",
+	"Deps": [
+		{
+			"ImportPath": "github.com/codegangsta/negroni",
+			"Comment": "v0.1-55-g1dd3ab0",
+			"Rev": "1dd3ab0ff59e13f5b73dcbf70703710aebe50d2f"
+		},
+		{
+			"ImportPath": "github.com/danryan/env",
+			"Rev": "bc567f4d372a17eb756004cdbfd8458ecc04b07e"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Rev": "215affda49addc4c8ef7e2534915df2c8c35c6cd"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Rev": "e444e69cbd2e2e3e0749a2f3c717cec491552bbf"
+		},
+		{
+			"ImportPath": "github.com/jingweno/negroni-gorelic",
+			"Rev": "0547cdd62f4b911984d435279bd46b4d1a580823"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm",
+			"Rev": "0219fb1cc033bda7ed78c90ed933fb3ecdb6f46f"
+		},
+		{
+			"ImportPath": "github.com/lib/pq",
+			"Comment": "go1.0-cutoff-8-g3e3efe5",
+			"Rev": "3e3efe51a0c4b23e817075438703cb15bd58c1a8"
+		},
+		{
+			"ImportPath": "github.com/phyber/negroni-gzip/gzip",
+			"Rev": "48f82605778a579cb8172122897f589e4023b537"
+		},
+		{
+			"ImportPath": "github.com/russross/blackfriday",
+			"Comment": "v1.2-34-g8ad7215",
+			"Rev": "8ad7215b24aa5f4ebe22d6995ebf476e3a4a2797"
+		},
+		{
+			"ImportPath": "github.com/shurcooL/go/github_flavored_markdown/sanitized_anchor_name",
+			"Rev": "48293cbc7a43126c44a44340e072e6d1a8e5ae81"
+		},
+		{
+			"ImportPath": "github.com/yvasiyarov/go-metrics",
+			"Rev": "c25f46c4b94079672242ec48a545e7ca9ebe3aec"
+		},
+		{
+			"ImportPath": "github.com/yvasiyarov/gorelic",
+			"Comment": "v0.0.6-8-ga9bba5b",
+			"Rev": "a9bba5b9ab508a086f9a12b8c51fab68478e2128"
+		},
+		{
+			"ImportPath": "github.com/yvasiyarov/newrelic_platform_go",
+			"Rev": "13d5af9721f4455a501db543c93827447089bab3"
+		},
+		{
+			"ImportPath": "gopkg.in/unrolled/render.v1",
+			"Rev": "bdfac4a8df10cc9dc03ee14ba2f655137fd70378"
+		}
+	]
+}
