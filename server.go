@@ -13,6 +13,7 @@ import (
 	"github.com/jingweno/negroni-gorelic"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
+	"github.com/nabeken/negroni-auth"
 	"github.com/phyber/negroni-gzip/gzip"
 	"gopkg.in/unrolled/render.v1"
 )
@@ -24,6 +25,8 @@ type Config struct {
 	Port        string `env:"key=BLOG_PORT default=:8080"`
 	Environment string `env:"key=ENVIRONMENT default=development"`
 	NewRelicKey string `env:"key=NEW_RELIC_KEY"`
+	BlogUser    string `env:"key=BLOG_USER default=fluffywolf24"`
+	BlogPwd     string `env:"key=BLOG_PASSWORD default=Longhorn$2"`
 }
 
 func main() {
@@ -67,7 +70,7 @@ func main() {
 	adminRouter.Path("/admin/posts/{id}/edit").Handler(a.Action(a.Edit))
 
 	router.PathPrefix("/admin").Handler(negroni.New(
-		negroni.HandlerFunc(AdminAuth),
+		auth.Basic(config.BlogUser, config.BlogPwd),
 		negroni.Wrap(adminRouter),
 	))
 
@@ -96,9 +99,4 @@ func checkErr(err error, msg string) {
 	if err != nil {
 		log.Fatalln(msg, err)
 	}
-}
-
-func AdminAuth(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
-	fmt.Println("Authenticate...")
-	next(w, r)
 }
