@@ -15,3 +15,5 @@ def deploy():
             run("git clone git@github.com:jonkgrimes/blog.git %s" % code_dir)
     with cd(code_dir):
         run("git pull")
+        run("go build")
+        sudo("restart blog")

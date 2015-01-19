@@ -10,13 +10,13 @@ Things to do:
 - [ ] creating posts
 - [ ] updating posts
 - [ ] some nicer styles
-- [ ] admin auth
+- [x] admin auth
 - [x] Google Analytics
 - [ ] get a js editor in place
-- [ ] figure out how to deploy this thing
+- [x] figure out how to deploy this thing
 - [ ] full fleged admin interface
 - [x] finish out about page
-- [ ] hookup newrelic
+- [x] hookup newrelic
 - [ ] add images
 - [x] remove any sensitive data
 - [x] import Wordpress export
