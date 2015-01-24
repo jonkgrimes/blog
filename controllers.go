@@ -5,6 +5,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
+	"github.com/mholt/binding"
 	"gopkg.in/unrolled/render.v1"
 )
 
@@ -87,11 +88,20 @@ func (c *AdminController) Edit(rw http.ResponseWriter, r *http.Request) error {
 
 func (c *AdminController) Update(rw http.ResponseWriter, r *http.Request) error {
 	post := Post{}
+	postForm := &PostForm{}
 
 	id := mux.Vars(r)["id"]
 	c.db.First(&post, id)
 
-	// update will go here
+	err := binding.Bind(r, postForm)
+	if err.Handle(rw) {
+		return nil
+	}
+
+	c.db.Model(&post).Updates(Post{
+		Title: postForm.Title,
+		Body:  postForm.Body,
+	})
 
 	http.Redirect(rw, r, "/admin", http.StatusFound)
 	return nil
