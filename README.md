@@ -8,7 +8,7 @@ Using some gorm and negroni.
 Things to do:
 
 - [ ] creating posts
-- [ ] updating posts
+- [x] updating posts
 - [ ] some nicer styles
 - [x] admin auth
 - [x] Google Analytics

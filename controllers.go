@@ -86,6 +86,27 @@ func (c *AdminController) Edit(rw http.ResponseWriter, r *http.Request) error {
 	return nil
 }
 
+func (c *AdminController) Create(rw http.ResponseWriter, r *http.Request) error {
+	postForm := &PostForm{}
+
+	errs := binding.Bind(r, postForm)
+	if errs.Handle(rw) {
+		return nil
+	}
+
+	post := Post{Title: postForm.Title, Body: postForm.Body}
+
+	c.db.Save(&post)
+
+	if !c.db.NewRecord(post) {
+		http.Redirect(rw, r, "/admin/", http.StatusFound)
+	} else {
+		c.HTML(rw, http.StatusOK, "admin/posts/new", &post)
+	}
+
+	return nil
+}
+
 func (c *AdminController) Update(rw http.ResponseWriter, r *http.Request) error {
 	post := Post{}
 	postForm := &PostForm{}

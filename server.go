@@ -10,7 +10,6 @@ import (
 	"github.com/codegangsta/negroni"
 	"github.com/danryan/env"
 	"github.com/gorilla/mux"
-	"github.com/jingweno/negroni-gorelic"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	"github.com/nabeken/negroni-auth"
@@ -24,7 +23,6 @@ type Config struct {
 	DbPassword  string `env:"key=BLOG_DATABASE_PASSWORD"`
 	Port        string `env:"key=BLOG_PORT default=:8080"`
 	Environment string `env:"key=ENVIRONMENT default=development"`
-	NewRelicKey string `env:"key=NEW_RELIC_KEY"`
 	BlogUser    string `env:"key=BLOG_USER default=fluffywolf24"`
 	BlogPwd     string `env:"key=BLOG_PASSWORD default=Longhorn$2"`
 }
@@ -42,7 +40,6 @@ func main() {
 	)
 
 	if config.Environment == "production" {
-		n.Use(negronigorelic.New(config.NewRelicKey, "blog", true))
 		n.Use(gzip.Gzip(gzip.DefaultCompression))
 	}
 
@@ -56,7 +53,7 @@ func main() {
 	a := &AdminController{Render: renderer, db: db}
 
 	// public routes
-	router := mux.NewRouter()
+	router := mux.NewRouter().StrictSlash(true)
 	router.Handle("/", c.Action(c.Index))
 	router.Handle("/about", c.Action(c.About))
 
@@ -64,11 +61,12 @@ func main() {
 	postRouter.Path("/{id}").Methods("GET").Handler(p.Action(p.Show))
 
 	// admin routes
-	adminRouter := mux.NewRouter()
+	adminRouter := mux.NewRouter().StrictSlash(true)
 	adminRouter.Path("/admin/").Handler(a.Action(a.Index))
 	adminRouter.Path("/admin/posts/new").Handler(a.Action(a.New))
 	adminRouter.Path("/admin/posts/{id}/edit").Handler(a.Action(a.Edit))
 	adminRouter.Path("/admin/posts/{id}").Methods("POST").Handler(a.Action(a.Update))
+	adminRouter.Path("/admin/posts").Methods("POST").Handler(a.Action(a.Create))
 
 	router.PathPrefix("/admin").Handler(negroni.New(
 		auth.Basic(config.BlogUser, config.BlogPwd),
