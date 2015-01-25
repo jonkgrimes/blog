@@ -56,7 +56,7 @@ func main() {
 	a := &AdminController{Render: renderer, db: db}
 
 	// public routes
-	router := mux.NewRouter().StrictSlash(true)
+	router := mux.NewRouter()
 	router.Handle("/", c.Action(c.Index))
 	router.Handle("/about", c.Action(c.About))
 
@@ -64,7 +64,7 @@ func main() {
 	postRouter.Path("/{id}").Methods("GET").Handler(p.Action(p.Show))
 
 	// admin routes
-	adminRouter := mux.NewRouter().StrictSlash(true)
+	adminRouter := mux.NewRouter()
 	adminRouter.Path("/admin/").Handler(a.Action(a.Index))
 	adminRouter.Path("/admin/posts/new").Handler(a.Action(a.New))
 	adminRouter.Path("/admin/posts/{id}/edit").Handler(a.Action(a.Edit))
