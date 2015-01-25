@@ -7,14 +7,14 @@ Using some gorm and negroni.
 
 Things to do:
 
-- [ ] creating posts
+- [x] creating posts
 - [x] updating posts
 - [ ] some nicer styles
 - [x] admin auth
 - [x] Google Analytics
 - [ ] get a js editor in place
 - [x] figure out how to deploy this thing
-- [ ] full fleged admin interface
+- [x] full fleged admin interface
 - [x] finish out about page
 - [x] hookup newrelic
 - [ ] add images
@@ -24,3 +24,6 @@ Things to do:
 - [ ] Post preivews
 - [ ] Post archives
 - [ ] Pagination on posts
+- [ ] Pretty slugs for posts
+- [ ] Published At date
+- [ ] Code refactor
