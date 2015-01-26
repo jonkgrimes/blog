@@ -16,4 +16,3 @@ def deploy():
     with cd(code_dir):
         run("git pull")
         run("go build")
-        sudo("restart blog")

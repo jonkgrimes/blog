@@ -9,18 +9,18 @@ Things to do:
 
 - [x] creating posts
 - [x] updating posts
-- [ ] some nicer styles
 - [x] admin auth
 - [x] Google Analytics
-- [ ] get a js editor in place
 - [x] figure out how to deploy this thing
 - [x] full fleged admin interface
 - [x] finish out about page
 - [x] hookup newrelic
-- [ ] add images
 - [x] remove any sensitive data
 - [x] import Wordpress export
-- [ ] Disqus
+- [x] Disqus
+- [ ] get a js editor in place
+- [ ] add images
+- [ ] some nicer styles
 - [ ] Post preivews
 - [ ] Post archives
 - [ ] Pagination on posts
