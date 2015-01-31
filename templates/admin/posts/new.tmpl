@@ -1,20 +1,6 @@
 <form accept-charset="UTF-8" action="/admin/posts" method="post"> 
   <fieldset>
     <legend>New Post</legend>
-    <div class="row">
-      <div class="large-16 columns">
-        <label>Title
-          <input name="title" type="text" placeholder="Title..." value="{{.Title}}" />      
-        </label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-16 columns">
-        <label>Body
-          <textarea name="body" placeholder="Body...">{{.Body}}</textarea>
-        </label>
-      </div>
-    </div>
-    <button class="button">Save</button>
+    {{template "admin/posts/form"}}
   </fieldset>
 </form>

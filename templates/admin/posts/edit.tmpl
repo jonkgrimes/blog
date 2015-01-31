@@ -4,17 +4,33 @@
     <div class="row">
       <div class="large-16 columns">
         <label>Title
-          <input name="title" type="text" placeholder="Title..." value="{{.Title}}" />      
+          <input id="post_title" name="title" type="text" placeholder="Title..." value="{{.Title}}" />      
         </label>
       </div>
     </div>
     <div class="row">
       <div class="large-16 columns">
         <label>Body
-          <textarea name="body" placeholder="Body...">{{.Body}}</textarea>
+          <div id="epiceditor">
+            <textarea id="post_body" name="body" placeholder="Body...">{{.Body}}</textarea>
+          </div>
         </label>
       </div>
     </div>
     <button class="button">Save</button>
   </fieldset>
 </form>
+<script src="/js/epiceditor.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    var opts= {
+      basePath: "/css",
+      theme: {
+        base: '/epiceditor/epiceditor.css',
+        preview: '/epiceditor/github.css',
+        editor: '/epiceditor/epic-light.css'
+      }
+    }
+    var editor = new EpicEditor(opts).load();
+  })
+</script>
