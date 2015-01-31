@@ -12,8 +12,8 @@
       <div class="large-16 columns">
         <label>Body
           <div id="epiceditor">
-            <textarea id="post_body" name="body" placeholder="Body...">{{.Body}}</textarea>
           </div>
+          <textarea id="post_body" class="hide" name="body" placeholder="Body...">{{.Body}}</textarea>
         </label>
       </div>
     </div>
@@ -25,6 +25,7 @@
   $(function() {
     var opts= {
       basePath: "/css",
+      textarea: "post_body",
       theme: {
         base: '/epiceditor/epiceditor.css',
         preview: '/epiceditor/github.css',
