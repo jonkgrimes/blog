@@ -3,6 +3,6 @@ finds himself in situations where he is hopelessly out
 of depth.</p>
 <ul>
   {{range .Posts }}
-  <li><a href="/posts/{{.Id}}">{{ .Title }}</a></li>
+  <li><a href="/posts{{.Slug}}">{{ .Title }}</a></li>
   {{ end }}
 </ul>

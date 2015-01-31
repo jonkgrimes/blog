@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"time"
 
@@ -9,11 +10,12 @@ import (
 )
 
 type Post struct {
-	Id        int64
-	Title     string `sql:"size:255"`
-	Body      string `sql:"text"`
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	Id          int64
+	Title       string `sql:"size:255"`
+	Body        string `sql:"text"`
+	PublishedAt time.Time
+	CreatedAt   time.Time
+	UpdatedAt   time.Time
 }
 
 type PostForm struct {
@@ -27,6 +29,10 @@ type HomePageView struct {
 
 type PostView struct {
 	Post Post
+}
+
+func (p *Post) Slug() string {
+	return fmt.Sprintf("/%d/%d/%s", p.PublishedAt.Year(), p.PublishedAt.Month(), p.Title)
 }
 
 func (p *PostView) Title() string {
