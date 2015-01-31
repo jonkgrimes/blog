@@ -89,6 +89,8 @@ func InitDb(c *Config) gorm.DB {
 	checkErr(err, "gorm.Open failed")
 
 	db.AutoMigrate(&Post{})
+	db.Model(&Post{}).AddIndex("idx_slug", "slug")
+	db.Model(&Post{}).AddIndex("idx_published_at", "published_at")
 	db.LogMode(true)
 
 	return db

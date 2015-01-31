@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"time"
 
@@ -13,6 +12,7 @@ type Post struct {
 	Id          int64
 	Title       string `sql:"size:255"`
 	Body        string `sql:"text"`
+	Slug        string `sql:"size:64"`
 	PublishedAt time.Time
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
@@ -31,9 +31,13 @@ type PostView struct {
 	Post Post
 }
 
-func (p *Post) Slug() string {
-	return fmt.Sprintf("/%d/%d/%s", p.PublishedAt.Year(), p.PublishedAt.Month(), p.Title)
+func (p *Post) BeforeSave() (err error) {
+	return
 }
+
+// func (p *Post) Slug() string {
+//	return fmt.Sprintf("/%d/%d/%s", p.PublishedAt.Year(), p.PublishedAt.Month(), p.Title)
+//}
 
 func (p *PostView) Title() string {
 	return p.Post.Title

@@ -41,7 +41,7 @@ type AdminController struct {
 
 func (c *HomeController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []Post
-	c.db.Order("created_at DESC").Find(&posts)
+	c.db.Not("published_at", "NULL").Order("published_at DESC").Find(&posts)
 
 	c.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
 	return nil
