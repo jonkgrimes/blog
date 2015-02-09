@@ -2,6 +2,8 @@ package main
 
 import (
 	"html/template"
+	"regexp"
+	"strings"
 	"time"
 
 	"github.com/mholt/binding"
@@ -27,6 +29,20 @@ type HomePageView struct {
 
 type PostView struct {
 	Post Post
+}
+
+func (p *Post) CreateSlug() string {
+	entities := regexp.MustCompile("&([0-9a-z#])+;")
+	dashes := regexp.MustCompile("[^a-z0-9]")
+	collapse := regexp.MustCompile("-+")
+
+	result := strings.ToLower(p.Title)
+	result = strings.Trim(result, " ")
+	result = entities.ReplaceAllString(result, "")
+	result = dashes.ReplaceAllString(result, "-")
+	result = collapse.ReplaceAllString(result, "-")
+
+	return result
 }
 
 func (p *PostView) Title() string {
