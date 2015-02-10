@@ -18,6 +18,10 @@ var createSlugCases = []struct {
 		Post{Title: "  This will have   uneven   spaces   "},
 		"this-will-have-uneven-spaces",
 	},
+	{
+		Post{Title: "This Replaces & with and"},
+		"this-replaces-and-with-and",
+	},
 }
 
 func TestCreateSlug(t *testing.T) {
