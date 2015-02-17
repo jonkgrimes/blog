@@ -11,12 +11,13 @@ import (
 )
 
 type Post struct {
-	Id        int64
-	Title     string `sql:"size:255"`
-	Body      string `sql:"text"`
-	Slug      string `sql:"size:128"`
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	Id          int64
+	Title       string `sql:"size:255"`
+	Body        string `sql:"text"`
+	Slug        string `sql:"size:128"`
+	PublishedAt time.Time
+	CreatedAt   time.Time
+	UpdatedAt   time.Time
 }
 
 type PostForm struct {
@@ -52,9 +53,9 @@ func (p *PostView) Title() string {
 	return p.Post.Title
 }
 
-func (p *PostView) PrettyCreatedAt() string {
+func (p *PostView) PrettyPublishedAt() string {
 	const layout = "Jan 2, 2006 at 3:04pm"
-	return p.Post.CreatedAt.Format(layout)
+	return p.Post.PublishedAt.Format(layout)
 }
 
 func (p *PostView) Body() template.HTML {
