@@ -35,6 +35,10 @@ var publishedAtCases = []struct {
 		Post{Title: "A Title of a Post", PublishedAt: time.Date(2015, time.May, 3, 8, 0, 0, 0, time.UTC)},
 		"May 3, 2015 at 8:00am",
 	},
+	{
+		Post{Title: "A Title of a Post", PublishedAt: time.Date(2015, time.May, 3, 8, 0, 0, 0, time.UTC)},
+		"May 3, 2015 at 8:00am",
+	},
 }
 
 func TestCreateSlug(t *testing.T) {
