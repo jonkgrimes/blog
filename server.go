@@ -65,6 +65,7 @@ func main() {
 	adminRouter.Path("/admin/").Handler(a.Action(a.Index))
 	adminRouter.Path("/admin/posts/new").Handler(a.Action(a.New))
 	adminRouter.Path("/admin/posts/{id}/edit").Handler(a.Action(a.Edit))
+	adminRouter.Path("/admin/posts/{id}/publish").Methods("POST").Handler(a.Action(a.Publish))
 	adminRouter.Path("/admin/posts/{id}").Methods("POST").Handler(a.Action(a.Update))
 	adminRouter.Path("/admin/posts").Methods("POST").Handler(a.Action(a.Create))
 

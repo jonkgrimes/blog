@@ -127,3 +127,15 @@ func (c *AdminController) Update(rw http.ResponseWriter, r *http.Request) error 
 	http.Redirect(rw, r, "/admin", http.StatusFound)
 	return nil
 }
+
+func (c *AdminController) Publish(rw http.ResponseWriter, r *http.Request) error {
+	post := Post{}
+
+	id := mux.Vars(r)["id"]
+	c.db.First(&post, id)
+
+	c.db.Model(&post).Updates(Post{PublishedAt: time.Now()})
+
+	http.Redirect(rw, r, "/admin", http.StatusFound)
+	return nil
+}
