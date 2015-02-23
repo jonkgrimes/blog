@@ -17,7 +17,7 @@ type Post struct {
 	Slug        string `sql:"size:128"`
 	PublishedAt time.Time
 	CreatedAt   time.Time
-	UpdatedAt   time.Time
+	UpdatedAt   time.Time `sql:"DEFAULT:NULL"`
 }
 
 type PostForm struct {

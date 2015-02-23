@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
@@ -41,7 +42,7 @@ type AdminController struct {
 
 func (c *HomeController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []Post
-	c.db.Order("created_at DESC").Find(&posts)
+	c.db.Where("published_at IS NOT NULL").Order("published_at DESC").Find(&posts)
 
 	c.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
 	return nil

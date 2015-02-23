@@ -80,7 +80,8 @@ func main() {
 }
 
 func InitDb(c *Config) gorm.DB {
-	tmpl, err := template.New("connection").Parse("user={{.DbUser}}{{if .DbPassword}} password={{.DbPassword}}{{end}} dbname={{.DbName}} sslmode=disable")
+	tmpl_str := "user={{.DbUser}}{{if .DbPassword}} password={{.DbPassword}}{{end}} dbname={{.DbName}} sslmode=disable"
+	tmpl, err := template.New("connection").Parse(tmpl_str)
 	var b bytes.Buffer
 	err = tmpl.Execute(&b, c)
 	connString := b.String()

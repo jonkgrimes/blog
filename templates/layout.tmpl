@@ -24,10 +24,20 @@
     </nav>
 
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-9 columns" role="content">
         {{ yield }}
       </div>
+      <aside class="large-3 columns">
+        <h5>Tags</h5>
+        <ul class="side-nav">
+          <li><a href="/tags/go">Go</a></li>
+          <li><a href="/tags/rails">Ruby on Rails</a></li>
+          <li><a href="/tags/etc">Etc.</a></li>
+          <li><a href="/tags/rants">Rants</a></li>
+        </ul>
+      </aside>
     </div>
+
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
