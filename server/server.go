@@ -15,6 +15,8 @@ import (
 	"github.com/nabeken/negroni-auth"
 	"github.com/phyber/negroni-gzip/gzip"
 	"gopkg.in/unrolled/render.v1"
+
+	"blog/controllers"
 )
 
 type Config struct {

@@ -12,12 +12,12 @@ import (
 
 type Post struct {
 	Id          int64
-	Title       string `sql:"size:255"`
-	Body        string `sql:"text"`
-	Slug        string `sql:"size:128"`
-	PublishedAt time.Time
+	Title       string    `sql:"size:255"`
+	Body        string    `sql:"text"`
+	Slug        string    `sql:"size:128"`
+	PublishedAt time.Time `sql:"default:NULL"`
 	CreatedAt   time.Time
-	UpdatedAt   time.Time `sql:"DEFAULT:NULL"`
+	UpdatedAt   time.Time
 }
 
 type PostForm struct {
