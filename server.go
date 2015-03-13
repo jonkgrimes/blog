@@ -51,9 +51,9 @@ func main() {
 	})
 	db := InitDb(config)
 
-	c := &HomeController{Render: renderer, db: db}
-	p := &PostsController{Render: renderer, db: db}
-	a := &AdminController{Render: renderer, db: db}
+	c := &controllers.HomeController{Render: renderer, Db: db}
+	p := &controllers.PostsController{Render: renderer, Db: db}
+	a := &controllers.AdminController{Render: renderer, Db: db}
 
 	// public routes
 	router := mux.NewRouter().StrictSlash(true)
@@ -93,7 +93,7 @@ func InitDb(c *Config) gorm.DB {
 
 	checkErr(err, "gorm.Open failed")
 
-	db.AutoMigrate(&Post{})
+	db.AutoMigrate(&models.Post{})
 	db.LogMode(true)
 
 	return db

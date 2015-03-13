@@ -14,7 +14,8 @@ import (
 
 type Action func(rw http.ResponseWriter, r *http.Request) error
 
-type AppController struct{}
+type AppController struct {
+}
 
 func (c *AppController) Action(a Action) http.Handler {
 	return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
@@ -25,26 +26,26 @@ func (c *AppController) Action(a Action) http.Handler {
 }
 
 type HomeController struct {
-	AppController
 	*render.Render
-	db gorm.DB
+	AppController
+	Db gorm.DB
 }
 
 type PostsController struct {
-	AppController
 	*render.Render
-	db gorm.DB
+	AppController
+	Db gorm.DB
 }
 
 type AdminController struct {
-	AppController
 	*render.Render
-	db gorm.DB
+	AppController
+	Db gorm.DB
 }
 
 func (c *HomeController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []models.Post
-	c.db.Where("published_at IS NOT NULL").Order("published_at DESC").Find(&posts)
+	c.Db.Where("published_at IS NOT NULL").Order("published_at DESC").Find(&posts)
 
 	c.HTML(rw, http.StatusOK, "home", &models.HomePageView{Posts: posts})
 	return nil
@@ -59,7 +60,7 @@ func (c *PostsController) Show(rw http.ResponseWriter, r *http.Request) error {
 	post := models.Post{}
 
 	id := mux.Vars(r)["id"]
-	c.db.First(&post, id)
+	c.Db.First(&post, id)
 
 	c.HTML(rw, http.StatusOK, "posts/show", &models.PostView{Post: post})
 
@@ -68,7 +69,7 @@ func (c *PostsController) Show(rw http.ResponseWriter, r *http.Request) error {
 
 func (c *AdminController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []models.Post
-	c.db.Order("created_at DESC").Find(&posts)
+	c.Db.Order("created_at DESC").Find(&posts)
 
 	c.HTML(rw, http.StatusOK, "admin/index", &models.HomePageView{Posts: posts})
 	return nil
@@ -83,7 +84,7 @@ func (c *AdminController) Edit(rw http.ResponseWriter, r *http.Request) error {
 	post := models.Post{}
 
 	id := mux.Vars(r)["id"]
-	c.db.First(&post, id)
+	c.Db.First(&post, id)
 
 	c.HTML(rw, http.StatusOK, "admin/posts/edit", &post)
 	return nil
@@ -99,9 +100,9 @@ func (c *AdminController) Create(rw http.ResponseWriter, r *http.Request) error 
 
 	post := models.Post{Title: postForm.Title, Body: postForm.Body}
 
-	c.db.Save(&post)
+	c.Db.Save(&post)
 
-	if !c.db.NewRecord(post) {
+	if !c.Db.NewRecord(post) {
 		http.Redirect(rw, r, "/admin/", http.StatusFound)
 	} else {
 		c.HTML(rw, http.StatusOK, "admin/posts/new", &post)
@@ -115,14 +116,14 @@ func (c *AdminController) Update(rw http.ResponseWriter, r *http.Request) error 
 	postForm := &models.PostForm{}
 
 	id := mux.Vars(r)["id"]
-	c.db.First(&post, id)
+	c.Db.First(&post, id)
 
 	err := binding.Bind(r, postForm)
 	if err.Handle(rw) {
 		return nil
 	}
 
-	c.db.Model(&post).Updates(models.Post{
+	c.Db.Model(&post).Updates(models.Post{
 		Title: postForm.Title,
 		Body:  postForm.Body,
 	})
@@ -135,9 +136,9 @@ func (c *AdminController) Publish(rw http.ResponseWriter, r *http.Request) error
 	post := models.Post{}
 
 	id := mux.Vars(r)["id"]
-	c.db.First(&post, id)
+	c.Db.First(&post, id)
 
-	c.db.Model(&post).Updates(models.Post{PublishedAt: time.Now()})
+	c.Db.Model(&post).Updates(models.Post{PublishedAt: time.Now()})
 
 	http.Redirect(rw, r, "/admin", http.StatusFound)
 	return nil
