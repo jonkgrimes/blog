@@ -1,4 +1,4 @@
-package main
+package controllers
 
 import (
 	"net/http"
@@ -8,6 +8,8 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/mholt/binding"
 	"gopkg.in/unrolled/render.v1"
+
+	"blog/models"
 )
 
 type Action func(rw http.ResponseWriter, r *http.Request) error
@@ -41,10 +43,10 @@ type AdminController struct {
 }
 
 func (c *HomeController) Index(rw http.ResponseWriter, r *http.Request) error {
-	var posts []Post
+	var posts []models.Post
 	c.db.Where("published_at IS NOT NULL").Order("published_at DESC").Find(&posts)
 
-	c.HTML(rw, http.StatusOK, "home", &HomePageView{Posts: posts})
+	c.HTML(rw, http.StatusOK, "home", &models.HomePageView{Posts: posts})
 	return nil
 }
 
@@ -54,21 +56,21 @@ func (c *HomeController) About(rw http.ResponseWriter, r *http.Request) error {
 }
 
 func (c *PostsController) Show(rw http.ResponseWriter, r *http.Request) error {
-	post := Post{}
+	post := models.Post{}
 
 	id := mux.Vars(r)["id"]
 	c.db.First(&post, id)
 
-	c.HTML(rw, http.StatusOK, "posts/show", &PostView{Post: post})
+	c.HTML(rw, http.StatusOK, "posts/show", &models.PostView{Post: post})
 
 	return nil
 }
 
 func (c *AdminController) Index(rw http.ResponseWriter, r *http.Request) error {
-	var posts []Post
+	var posts []models.Post
 	c.db.Order("created_at DESC").Find(&posts)
 
-	c.HTML(rw, http.StatusOK, "admin/index", &HomePageView{Posts: posts})
+	c.HTML(rw, http.StatusOK, "admin/index", &models.HomePageView{Posts: posts})
 	return nil
 }
 
@@ -78,7 +80,7 @@ func (c *AdminController) New(rw http.ResponseWriter, r *http.Request) error {
 }
 
 func (c *AdminController) Edit(rw http.ResponseWriter, r *http.Request) error {
-	post := Post{}
+	post := models.Post{}
 
 	id := mux.Vars(r)["id"]
 	c.db.First(&post, id)
@@ -88,14 +90,14 @@ func (c *AdminController) Edit(rw http.ResponseWriter, r *http.Request) error {
 }
 
 func (c *AdminController) Create(rw http.ResponseWriter, r *http.Request) error {
-	postForm := &PostForm{}
+	postForm := &models.PostForm{}
 
 	errs := binding.Bind(r, postForm)
 	if errs.Handle(rw) {
 		return nil
 	}
 
-	post := Post{Title: postForm.Title, Body: postForm.Body}
+	post := models.Post{Title: postForm.Title, Body: postForm.Body}
 
 	c.db.Save(&post)
 
@@ -109,8 +111,8 @@ func (c *AdminController) Create(rw http.ResponseWriter, r *http.Request) error 
 }
 
 func (c *AdminController) Update(rw http.ResponseWriter, r *http.Request) error {
-	post := Post{}
-	postForm := &PostForm{}
+	post := models.Post{}
+	postForm := &models.PostForm{}
 
 	id := mux.Vars(r)["id"]
 	c.db.First(&post, id)
@@ -120,7 +122,7 @@ func (c *AdminController) Update(rw http.ResponseWriter, r *http.Request) error 
 		return nil
 	}
 
-	c.db.Model(&post).Updates(Post{
+	c.db.Model(&post).Updates(models.Post{
 		Title: postForm.Title,
 		Body:  postForm.Body,
 	})
@@ -130,12 +132,12 @@ func (c *AdminController) Update(rw http.ResponseWriter, r *http.Request) error 
 }
 
 func (c *AdminController) Publish(rw http.ResponseWriter, r *http.Request) error {
-	post := Post{}
+	post := models.Post{}
 
 	id := mux.Vars(r)["id"]
 	c.db.First(&post, id)
 
-	c.db.Model(&post).Updates(Post{PublishedAt: time.Now()})
+	c.db.Model(&post).Updates(models.Post{PublishedAt: time.Now()})
 
 	http.Redirect(rw, r, "/admin", http.StatusFound)
 	return nil

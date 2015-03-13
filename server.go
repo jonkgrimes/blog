@@ -17,6 +17,7 @@ import (
 	"gopkg.in/unrolled/render.v1"
 
 	"blog/controllers"
+	"blog/models"
 )
 
 type Config struct {
