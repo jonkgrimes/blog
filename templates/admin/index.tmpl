@@ -1,22 +1,61 @@
-<h2>Admin</h2>
-<table>
-  <thead>
-    <th>Title</th>
-    <th></th>
-  </thead>
-  <tbody>
-    {{range .Posts}}
-    <tr>
-      <td>{{ .Title }}</td>
-      <td>
-        <a href="/admin/posts/{{.Id}}/edit">Edit</a>
-        |
-        <a data-id="{{.Id}}" href="/admin/posts/{{.Id}}/publish">Publish</a>
-        |
-        <a href="/admin/posts/{{.Id}}">Destroy</a>
-      </td>
-    </tr>
-    {{ end }}
-  </tbody>
-</table>
-<a href="/admin/posts/new" class="button radius" >Create New Post</a>
+<div class="admin">
+  <div class="admin-title">
+    <h2>Admin</h2>
+  </div>
+  <div class="admin-list">
+    <table>
+      <thead>
+        <th>Title</th>
+        <th></th>
+      </thead>
+      <tbody>
+        {{range .Posts}}
+        <tr>
+          <td>{{ .Title }}</td>
+          <td>
+            <a href="/admin/posts/{{.Id}}/edit">Edit</a>
+            |
+            <a class="publish-post" data-id="{{.Id}}" href="/admin/posts/{{.Id}}/publish">Publish</a>
+            |
+            <a href="/admin/posts/{{.Id}}">Destroy</a>
+          </td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+    <a href="/admin/posts/new" class="button radius" >Create New Post</a>
+  </div>
+</div>
+<script type="text/javascript">
+$(function() {
+  window.admin = {
+    publishPost: function(e) {
+      e.preventDefault();
+      var $target = $(e.target),
+          id = $target.attr("data-id"),
+          url = "/admin/posts/" + id + "/publish";
+
+      var xhr = $.ajax({
+        url: url,
+        method: "POST"
+      })
+
+      xhr.done(function() {
+        var alertBox = " \
+          <div data-alert class='alert-box success radius'> \
+            Post published! \
+            <a href='#' class='close'>&times;</a> \
+          </div> \
+        "
+        $(".admin-list").prepend(alertBox);
+        $(document).foundation('alert', 'reflow');
+      });
+    },
+    init: function() {
+      $("a.publish-post").on("click", admin.publishPost);
+    }
+  }
+
+  admin.init();
+});
+</script>
