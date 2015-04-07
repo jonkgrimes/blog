@@ -1,43 +1,42 @@
 package models
 
 import (
-	"blog/models"
 	"testing"
 	"time"
 )
 
 var createSlugCases = []struct {
-	post     models.Post
+	post     Post
 	expected string
 }{
 	{
-		models.Post{Title: "A Title For A Post"},
+		Post{Title: "A Title For A Post"},
 		"a-title-for-a-post",
 	},
 	{
-		models.Post{Title: "Some punctuation's in this one"},
+		Post{Title: "Some punctuation's in this one"},
 		"some-punctuation-s-in-this-one",
 	},
 	{
-		models.Post{Title: "  This will have   uneven   spaces   "},
+		Post{Title: "  This will have   uneven   spaces   "},
 		"this-will-have-uneven-spaces",
 	},
 	{
-		models.Post{Title: "This Replaces & with and"},
+		Post{Title: "This Replaces & with and"},
 		"this-replaces-and-with-and",
 	},
 }
 
 var publishedAtCases = []struct {
-	post     models.Post
+	post     Post
 	expected string
 }{
 	{
-		models.Post{Title: "A Title of a Post", PublishedAt: time.Date(2015, time.May, 3, 8, 0, 0, 0, time.UTC)},
+		Post{Title: "A Title of a Post", PublishedAt: time.Date(2015, time.May, 3, 8, 0, 0, 0, time.UTC)},
 		"May 3, 2015 at 8:00am",
 	},
 	{
-		models.Post{Title: "A Title of a Post", PublishedAt: time.Date(2015, time.May, 3, 8, 0, 0, 0, time.UTC)},
+		Post{Title: "A Title of a Post", PublishedAt: time.Date(2015, time.May, 3, 8, 0, 0, 0, time.UTC)},
 		"May 3, 2015 at 8:00am",
 	},
 }
@@ -58,7 +57,7 @@ func TestCreateSlug(t *testing.T) {
 func TestPrettyPublishedAt(t *testing.T) {
 	t.Log("TestPublishedAt")
 	for _, testCase := range publishedAtCases {
-		post_view := models.PostView{Post: testCase.post}
+		post_view := PostView{Post: testCase.post}
 		actual := post_view.PrettyPublishedAt()
 		expected := testCase.expected
 		if expected != actual {
