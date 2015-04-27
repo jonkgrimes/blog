@@ -9,15 +9,14 @@ $(function() {
       var xhr = $.ajax({
         url: url,
         method: "POST"
-      })
+      });
 
       xhr.done(function() {
-        var alertBox = " \
-          <div data-alert class='alert-box success radius'> \
-            Post published! \
-            <a href='#' class='close'>&times;</a> \
-          </div> \
-        "
+        var alertBox =
+          "<div data-alert class='alert-box success radius'>" +
+            "Post published!" +
+            "<a href='#' class='close'>&times;</a>" +
+          "</div>";
         $(".admin-list").prepend(alertBox);
         $(document).foundation('alert', 'reflow');
       });
@@ -25,5 +24,5 @@ $(function() {
     init: function() {
       $("a.publish-post").on("click", admin.publishPost);
     }
-  }
+  };
 });
