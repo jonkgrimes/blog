@@ -19,8 +19,8 @@ type PostsController struct {
 func (c *PostsController) Show(rw http.ResponseWriter, r *http.Request) error {
 	post := models.Post{}
 
-	id := mux.Vars(r)["id"]
-	c.Db.First(&post, id)
+	slug := mux.Vars(r)["slug"]
+	c.Db.Where("slug = ?", slug).First(&post)
 
 	c.HTML(rw, http.StatusOK, "posts/show", &models.PostView{Post: post})
 

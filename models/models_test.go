@@ -15,7 +15,7 @@ var createSlugCases = []struct {
 	},
 	{
 		Post{Title: "Some punctuation's in this one"},
-		"some-punctuation-s-in-this-one",
+		"some-punctuations-in-this-one",
 	},
 	{
 		Post{Title: "  This will have   uneven   spaces   "},
@@ -45,7 +45,8 @@ func TestCreateSlug(t *testing.T) {
 	t.Log("TestCreateSlug")
 	for _, testCase := range createSlugCases {
 		post := testCase.post
-		actual := post.CreateSlug()
+		post.CreateSlug()
+		actual := post.Slug
 		expected := testCase.expected
 		if expected != actual {
 			t.Logf("Expected \"%s\" but got \"%s\"", expected, actual)

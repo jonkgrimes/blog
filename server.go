@@ -24,7 +24,7 @@ type Config struct {
 	DbName      string `env:"key=BLOG_DATABASE_NAME default=blog_development"`
 	DbUser      string `env:"key=BLOG_DATABASE_USER default=jong"`
 	DbPassword  string `env:"key=BLOG_DATABASE_PASSWORD"`
-	Port        string `env:"key=BLOG_PORT default=:8080"`
+	Port        string `env:"key=BLOG_PORT default=:3000"`
 	Environment string `env:"key=ENVIRONMENT default=development"`
 	BlogUser    string `env:"key=BLOG_USER default=fluffywolf24"`
 	BlogPwd     string `env:"key=BLOG_PASSWORD default=Longhorn$2"`
@@ -61,7 +61,7 @@ func main() {
 	router.Handle("/about", c.Action(c.About))
 
 	postRouter := router.PathPrefix("/posts").Subrouter()
-	postRouter.Path("/{id}").Methods("GET").Handler(p.Action(p.Show))
+	postRouter.Path("/{slug}").Methods("GET").Handler(p.Action(p.Show))
 
 	// admin routes
 	adminRouter := mux.NewRouter().StrictSlash(true)
