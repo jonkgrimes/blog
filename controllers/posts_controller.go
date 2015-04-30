@@ -16,13 +16,26 @@ type PostsController struct {
 	Db gorm.DB
 }
 
+func (c *PostsController) Index(rw http.ResponseWriter, r *http.Request) error {
+	var posts []models.Post
+
+	c.Db.Where("published_at IS NOT NULL").Order("published_at DESC").Find(&posts)
+
+	c.JSON(rw, http.StatusOK, map[string]interface{}{"posts": posts})
+	return nil
+}
+
 func (c *PostsController) Show(rw http.ResponseWriter, r *http.Request) error {
 	post := models.Post{}
 
-	slug := mux.Vars(r)["slug"]
-	c.Db.Where("slug = ?", slug).First(&post)
+	id := mux.Vars(r)["id"]
+	c.Db.First(&post, id)
 
-	c.HTML(rw, http.StatusOK, "posts/show", &models.PostView{Post: post})
+	if post.Id != 0 {
+		c.JSON(rw, http.StatusOK, map[string]interface{}{"post": post})
+	} else {
+		c.JSON(rw, http.StatusNotFound, nil)
+	}
 
 	return nil
 }

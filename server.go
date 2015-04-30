@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"fmt"
 	"log"
 	"net/http"
 	"text/template"
@@ -12,7 +11,6 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
-	"github.com/nabeken/negroni-auth"
 	"github.com/phyber/negroni-gzip/gzip"
 	"gopkg.in/unrolled/render.v1"
 
@@ -32,16 +30,16 @@ type Config struct {
 
 func main() {
 	config := &Config{}
-	if err := env.Process(config); err != nil {
-		fmt.Println(err)
-	}
+	checkErr(env.Process(config), "There was a configuration error: ")
 
+	// Setup middlewares
 	n := negroni.New(
 		negroni.NewRecovery(),
 		negroni.NewLogger(),
 		negroni.NewStatic(http.Dir("public")),
 	)
 
+	// Use Gzip in production
 	if config.Environment == "production" {
 		n.Use(gzip.Gzip(gzip.DefaultCompression))
 	}
@@ -51,31 +49,13 @@ func main() {
 	})
 	db := InitDb(config)
 
-	c := &controllers.HomeController{Render: renderer, Db: db}
 	p := &controllers.PostsController{Render: renderer, Db: db}
-	a := &controllers.AdminController{Render: renderer, Db: db}
 
-	// public routes
 	router := mux.NewRouter().StrictSlash(true)
-	router.Handle("/", c.Action(c.Index))
-	router.Handle("/about", c.Action(c.About))
 
 	postRouter := router.PathPrefix("/posts").Subrouter()
-	postRouter.Path("/{slug}").Methods("GET").Handler(p.Action(p.Show))
-
-	// admin routes
-	adminRouter := mux.NewRouter().StrictSlash(true)
-	adminRouter.Path("/admin/").Handler(a.Action(a.Index))
-	adminRouter.Path("/admin/posts/new").Handler(a.Action(a.New))
-	adminRouter.Path("/admin/posts/{id}/edit").Handler(a.Action(a.Edit))
-	adminRouter.Path("/admin/posts/{id}/publish").Methods("POST").Handler(a.Action(a.Publish))
-	adminRouter.Path("/admin/posts/{id}").Methods("POST").Handler(a.Action(a.Update))
-	adminRouter.Path("/admin/posts").Methods("POST").Handler(a.Action(a.Create))
-
-	router.PathPrefix("/admin").Handler(negroni.New(
-		auth.Basic(config.BlogUser, config.BlogPwd),
-		negroni.Wrap(adminRouter),
-	))
+	postRouter.Path("/").Methods("GET").Handler(p.Action(p.Index))
+	postRouter.Path("/{id}").Methods("GET").Handler(p.Action(p.Show))
 
 	n.UseHandler(router)
 

@@ -6,13 +6,13 @@ import (
 )
 
 type Post struct {
-	Id          int64
-	Title       string    `sql:"size:255"`
-	Body        string    `sql:"text"`
-	Slug        string    `sql:"size:128;index"`
-	PublishedAt time.Time `sql:"default:NULL"`
-	CreatedAt   time.Time
-	UpdatedAt   time.Time
+	Id          int64     `json:"id"`
+	Title       string    `sql:"size:255" json:"title"`
+	Body        string    `sql:"text" json:"body"`
+	Slug        string    `sql:"size:128;index" json:"slug"`
+	PublishedAt time.Time `sql:"default:NULL" json:"published_at"`
+	CreatedAt   time.Time `json:"created_at"`
+	UpdatedAt   time.Time `json:"updated_at"`
 }
 
 func (p *Post) BeforeSave() error {
