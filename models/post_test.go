@@ -31,8 +31,9 @@ func TestCreateSlug(t *testing.T) {
 	for _, testCase := range createSlugCases {
 		post := testCase.post
 		post.CreateSlug()
-		actual := post.Slug
 		expected := testCase.expected
+		actual := post.Slug
+
 		if expected != actual {
 			t.Logf("Expected \"%s\" but got \"%s\"", expected, actual)
 			t.Fail()
