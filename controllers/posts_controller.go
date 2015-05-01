@@ -19,7 +19,7 @@ type PostsController struct {
 func (c *PostsController) Index(rw http.ResponseWriter, r *http.Request) error {
 	var posts []models.Post
 
-	c.Db.Where("published_at IS NOT NULL").Order("published_at DESC").Find(&posts)
+	c.Db.Find(&posts)
 
 	c.JSON(rw, http.StatusOK, map[string]interface{}{"posts": posts})
 	return nil

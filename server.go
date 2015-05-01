@@ -49,12 +49,13 @@ func main() {
 	})
 	db := InitDb(config)
 
+	// Post resources
 	p := &controllers.PostsController{Render: renderer, Db: db}
 
-	router := mux.NewRouter().StrictSlash(true)
+	router := mux.NewRouter()
 
+	router.Path("/posts").Methods("GET").Handler(p.Action(p.Index))
 	postRouter := router.PathPrefix("/posts").Subrouter()
-	postRouter.Path("/").Methods("GET").Handler(p.Action(p.Index))
 	postRouter.Path("/{id}").Methods("GET").Handler(p.Action(p.Show))
 
 	n.UseHandler(router)
