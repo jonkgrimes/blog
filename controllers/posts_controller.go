@@ -1,10 +1,12 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
+	"github.com/mholt/binding"
 	"gopkg.in/unrolled/render.v1"
 
 	"blog/models"
@@ -35,6 +37,32 @@ func (c *PostsController) Show(rw http.ResponseWriter, r *http.Request) error {
 		c.JSON(rw, http.StatusOK, map[string]interface{}{"post": post})
 	} else {
 		c.JSON(rw, http.StatusNotFound, nil)
+	}
+
+	return nil
+}
+
+func (c *PostsController) Create(rw http.ResponseWriter, r *http.Request) error {
+	postForm := &models.PostForm{}
+
+	fmt.Println(r)
+	errs := binding.Bind(r, postForm)
+	fmt.Println(postForm)
+	if errs.Handle(rw) {
+		return nil
+	}
+
+	post := models.Post{
+		Title: postForm.Title,
+		Body:  postForm.Body,
+	}
+
+	c.Db.Save(&post)
+
+	if !c.Db.NewRecord(post) {
+		c.JSON(rw, http.StatusCreated, post)
+	} else {
+		c.JSON(rw, 422, post)
 	}
 
 	return nil

@@ -55,6 +55,7 @@ func main() {
 	router := mux.NewRouter()
 
 	router.Path("/posts").Methods("GET").Handler(p.Action(p.Index))
+	router.Path("/posts").Methods("POST").Handler(p.Action(p.Create))
 	postRouter := router.PathPrefix("/posts").Subrouter()
 	postRouter.Path("/{id}").Methods("GET").Handler(p.Action(p.Show))
 

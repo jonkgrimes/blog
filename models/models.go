@@ -7,11 +7,6 @@ import (
 	"github.com/russross/blackfriday"
 )
 
-type PostForm struct {
-	Title string
-	Body  string
-}
-
 type HomePageView struct {
 	Posts []Post
 }
@@ -33,9 +28,20 @@ func (p *PostView) Body() template.HTML {
 	return template.HTML(blackfriday.MarkdownCommon([]byte(p.Post.Body)))
 }
 
+type PostForm struct {
+	Title string `json:"title"`
+	Body  string `json:"body"`
+}
+
 func (pf *PostForm) FieldMap() binding.FieldMap {
 	return binding.FieldMap{
-		&pf.Title: "title",
-		&pf.Body:  "body",
+		&pf.Title: binding.Field{
+			Form:     "title",
+			Required: true,
+		},
+		&pf.Body: binding.Field{
+			Form:     "body",
+			Required: true,
+		},
 	}
 }
